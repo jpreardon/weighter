@@ -112,7 +112,7 @@ function successfulSend(responseText) {
   }
 
   // Set the response message and display it
-  document.getElementById("responseMessage").innerHTML = responseMessage
+  document.getElementById("responseMessage").innerHTML = responseMessage + addAnotherButton()
   document.getElementById("responseMessage").style.display = "block"
 }
 
@@ -130,4 +130,15 @@ function failSend() {
 // Round function
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+
+// Add another button
+function addAnotherButton() {
+  return "<button class='stand-alone-button' onclick='addAnother()'>Add Another Weight</button>"
+}
+
+function addAnother() {
+  document.getElementById("weight").value = ""
+  document.getElementById("weightEntryForm").style.display = "block"
+  document.getElementById("responseMessage").style.display = "none"
 }
