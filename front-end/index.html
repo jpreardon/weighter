@@ -9,7 +9,6 @@
   <body>
     <div class="container">
       <h1>Rewards!</h1>
-      <p>The rewards app isn't so rewarding now, is it?</p>
       <p id="lastWeighInfo">Your weight on <span id="lastWeighDate"></span> was <span id="lastWeight"></span>.</p>
       <form method="POST" action="" id="weightEntryForm">
         <label for="date">Date</label>
@@ -113,7 +112,8 @@
         if (responseText == "null") {
           responseMessage = "A weight already exists for that date, enter a different date, or brush up on your SQL skilz..."
         } else {
-          var lost = Number(document.getElementById("lastWeight").innerHTML) - Number(document.getElementById("weight").value)
+          var lost = round(Number(document.getElementById("lastWeight").innerHTML) - Number(document.getElementById("weight").value), 2)
+
           if (lost > 0) {
             responseMessage = "Congrats! You lost " + lost.toString() + " pounds!"
           } else if (lost == 0) {
@@ -136,6 +136,10 @@
 
         document.getElementById("responseMessage").innerHTML = responseMessage
         document.getElementById("responseMessage").style.display = "block"
+      }
+
+      function round(value, decimals) {
+        return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
       }
 
     </script>
