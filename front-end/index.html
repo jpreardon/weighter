@@ -11,13 +11,15 @@
       <h1>Rewards!</h1>
       <p>The rewards app isn't so rewarding now, is it?</p>
       <p id="lastWeighInfo">Your weight on <span id="lastWeighDate"></span> was <span id="lastWeight"></span>.</p>
-      <form method="POST" action="api/api.php/weight">
+      <form method="POST" action="" id="weightEntryForm">
         <label for="date">Date</label>
         <input type="date" id="date" name="date" />
         <label for="weight">Weight</label>
         <input type="number" step="0.01" id="weight" name="weight" />
-        <input type="submit" value="Submit" />
+        <!--<input type="submit" value="Submit" />-->
+        <button type="button" onClick="sendData()">Submit</button>
       </form>
+      <p id="responseMessage"></p>
     </div>
 
     <script>
@@ -64,6 +66,76 @@
         document.getElementById("lastWeighDate").innerHTML = lastWeighDate
         document.getElementById("lastWeight").innerHTML = lastWeight
         document.getElementById("lastWeighInfo").style.display = 'block'
+      }
+
+      function sendData() {
+        var XHR = new XMLHttpRequest();
+        var urlEncodedData = "";
+        var urlEncodedDataPairs = [];
+        var name;
+        var date = document.getElementById("date")
+        var weight = document.getElementById("weight")
+
+        // Turn the data object into an array of URL-encoded key/value pairs.
+        urlEncodedDataPairs.push(encodeURIComponent(date.name) + '=' + encodeURIComponent(date.value))
+        urlEncodedDataPairs.push(encodeURIComponent(weight.name) + '=' + encodeURIComponent(weight.value))
+
+        // Combine the pairs into a single string and replace all %-encoded spaces to 
+        // the '+' character; matches the behaviour of browser form submissions.
+        urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+
+        // Define what happens on successful data submission
+        XHR.addEventListener('load', function(event) {
+          successfulSend(XHR.responseText)
+        });
+
+        // Define what happens in case of error
+        XHR.addEventListener('error', function(event) {
+          failSend()
+        });
+
+        // Set up our request
+        XHR.open('POST', 'http://jpreardon.com/rewards/api/api.php/weight');
+
+        // Add the required HTTP header for form data POST requests
+        XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        // Finally, send our data.
+        XHR.send(urlEncodedData);
+      }
+
+      function successfulSend(responseText) {
+        document.getElementById("weightEntryForm").style.display = "none"
+        document.getElementById("lastWeighInfo").style.display = "none"
+
+        var reponseMessage
+
+        if (responseText == "null") {
+          responseMessage = "A weight already exists for that date, enter a different date, or brush up on your SQL skilz..."
+        } else {
+          var lost = Number(document.getElementById("lastWeight").innerHTML) - Number(document.getElementById("weight").value)
+          if (lost > 0) {
+            responseMessage = "Congrats! You lost " + lost.toString() + " pounds!"
+          } else if (lost == 0) {
+            responseMessage = "You lost nothing, call it a success."
+          } else {
+            responseMessage = "You gained <strong>" + lost.toString().substring(1) + " pounds</strong>! Get motivated!!!"
+          }
+          
+        }
+
+        document.getElementById("responseMessage").innerHTML = responseMessage
+        document.getElementById("responseMessage").style.display = "block"
+      }
+
+      function failSend() {
+        document.getElementById("weightEntryForm").style.display = "none"
+        document.getElementById("lastWeighInfo").style.display = "none"
+
+        var reponseMessage = "Something went horribly wrong, maybe try again."
+
+        document.getElementById("responseMessage").innerHTML = responseMessage
+        document.getElementById("responseMessage").style.display = "block"
       }
 
     </script>
