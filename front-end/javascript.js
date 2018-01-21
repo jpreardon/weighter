@@ -32,7 +32,7 @@ xhr.send()
 // TODO: Replace this function with one in the API
 function getLastWeight(weightsArray) {
   var lastRecord = weightsArray.length - 1
-  var lastWeighDate = weightsArray[lastRecord].date
+  var lastWeighDate = dateOnly(weightsArray[lastRecord].date)
   var lastWeight = weightsArray[lastRecord].weight
 
   document.getElementById("lastWeighDate").innerHTML = lastWeighDate
@@ -145,4 +145,25 @@ function addAnother() {
   document.getElementById("weight").value = ""
   document.getElementById("weightEntryForm").style.display = "block"
   document.getElementById("responseMessage").style.display = "none"
+}
+
+function dateOnly(dateString) {
+  var longDate = new Date(dateString)
+  var dd = longDate.getUTCDate()
+  var mm = longDate.getUTCMonth()+1 //January is 0!
+  var yyyy = longDate.getUTCFullYear()
+  var shortDate
+
+  // Add leading zero if needed to day and month
+  if(dd < 10) {
+      dd = '0' + dd
+  } 
+  if(mm < 10) {
+      mm = '0' + mm
+  } 
+
+  // Populate the field
+  shortDate = yyyy + '-' + mm + '-' + dd
+
+  return shortDate
 }
