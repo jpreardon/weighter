@@ -17,9 +17,6 @@ today = yyyy + '-' + mm + '-' + dd
 document.getElementById("date").value = today
 
 // Get the last weight
-// TODO: This is error prone since the last element may not be the most recent date. This is a failing
-//       of both the API and the front end developer. The API needs to be, and will be replaced at some 
-//       point, but the front end could certainly compensate for it if the developer weren't so lazy.
 var xhr = new XMLHttpRequest()
 
 xhr.onreadystatechange = function() {
@@ -29,15 +26,14 @@ xhr.onreadystatechange = function() {
   }
 }
 
-xhr.open("GET", "http://jpreardon.com/rewards/api/api.php/weight", true)
+xhr.open("GET", "http://api.jpreardon.com/weights", true)
 xhr.send()
 
+// TODO: Replace this function with one in the API
 function getLastWeight(weightsArray) {
-  var lastRecord = weightsArray.weight.records.length - 1
-  var dateIndex = 1
-  var weightIndex = 2
-  var lastWeighDate = weightsArray.weight.records[lastRecord][dateIndex]
-  var lastWeight = weightsArray.weight.records[lastRecord][weightIndex]
+  var lastRecord = weightsArray.length - 1
+  var lastWeighDate = weightsArray[lastRecord].date
+  var lastWeight = weightsArray[lastRecord].weight
 
   document.getElementById("lastWeighDate").innerHTML = lastWeighDate
   document.getElementById("lastWeight").innerHTML = lastWeight
@@ -72,7 +68,7 @@ function sendData() {
   });
 
   // Set up our request
-  xhr2.open('POST', 'http://jpreardon.com/rewards/api/api.php/weight');
+  xhr2.open('POST', 'http://api.jpreardon.com/weights');
 
   // Add the required HTTP header for form data POST requests
   xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -90,11 +86,8 @@ function successfulSend(responseText) {
   var reponseMessage
 
   // Inspect the response and craft the message accordingly
-  if (responseText == "null") {
-    // We don't allow updates at the moment
-    responseMessage = "A weight already exists for that date, enter a different date, or brush up on your SQL skilz..."
-  } else {
-    // Find out how much was gained or lost, round to 2 decimal places
+  if (responseText == "1") {
+     // Find out how much was gained or lost, round to 2 decimal places
     var lost = round(Number(document.getElementById("lastWeight").innerHTML) - Number(document.getElementById("weight").value), 2)
 
 
@@ -108,7 +101,18 @@ function successfulSend(responseText) {
       // Weight gain, this is a negative number, so chop off the "-" before displaying
       responseMessage = "You gained <strong>" + lost.toString().substring(1) + " pounds</strong>! Get motivated!!!"
     }
-    
+  } else if (responseText  == "0") {
+    // No rows affected, mystery!
+    responseMessage = "Your entry may not have been recorded, try again."
+  } else {
+      var response = JSON.parse(responseText)
+
+      if (response.code == "ER_DUP_ENTRY") {
+        // We don't allow updates at the moment
+        responseMessage = "A weight already exists for that date, enter a different date, or brush up on your SQL skilz..."
+      } else {
+        responseMessage = response
+      }
   }
 
   // Set the response message and display it
