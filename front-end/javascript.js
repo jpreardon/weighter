@@ -1,7 +1,6 @@
 // API Endpoint
 var endPoint = "http://api.jpreardon.com/weights"
 
-
 // Enter today's date in date field
 var today = new Date()
 var dd = today.getDate()
@@ -26,23 +25,14 @@ var xhr = new XMLHttpRequest()
 xhr.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var weights = JSON.parse(this.responseText)
-    getLastWeight(weights)
+    document.getElementById("lastWeighDate").innerHTML = dateOnly(weights[0].date)
+    document.getElementById("lastWeight").innerHTML = weights[0].weight
+    document.getElementById("lastWeighInfo").style.display = 'block'
   }
 }
 
-xhr.open("GET", endPoint, true)
+xhr.open("GET", endPoint + "/?datefilter=max", true)
 xhr.send()
-
-// TODO: Replace this function with one in the API
-function getLastWeight(weightsArray) {
-  var lastRecord = weightsArray.length - 1
-  var lastWeighDate = dateOnly(weightsArray[lastRecord].date)
-  var lastWeight = weightsArray[lastRecord].weight
-
-  document.getElementById("lastWeighDate").innerHTML = lastWeighDate
-  document.getElementById("lastWeight").innerHTML = lastWeight
-  document.getElementById("lastWeighInfo").style.display = 'block'
-}
 
 // This was lifted (mostely) from MDN
 function sendData() {
