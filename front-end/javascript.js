@@ -1,3 +1,7 @@
+// API Endpoint
+var endPoint = "http://api.jpreardon.com/weights"
+
+
 // Enter today's date in date field
 var today = new Date()
 var dd = today.getDate()
@@ -26,7 +30,7 @@ xhr.onreadystatechange = function() {
   }
 }
 
-xhr.open("GET", "http://api.jpreardon.com/weights", true)
+xhr.open("GET", endPoint, true)
 xhr.send()
 
 // TODO: Replace this function with one in the API
@@ -68,7 +72,7 @@ function sendData() {
   });
 
   // Set up our request
-  xhr2.open('POST', 'http://api.jpreardon.com/weights');
+  xhr2.open('POST', endPoint);
 
   // Add the required HTTP header for form data POST requests
   xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
