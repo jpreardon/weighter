@@ -1,38 +1,32 @@
 // API Endpoint
 var endPoint = "http://api.jpreardon.com/weights"
 
-// Enter today's date in date field
-var today = new Date()
-var dd = today.getDate()
-var mm = today.getMonth()+1 //January is 0!
-var yyyy = today.getFullYear()
-
-// Add leading zero if needed to day and month
-if(dd<10) {
-    dd = '0'+dd
-} 
-if(mm<10) {
-    mm = '0'+mm
-} 
-
-// Populate the field
-today = yyyy + '-' + mm + '-' + dd
-document.getElementById("date").value = today
+// Put today's date in date field
+document.getElementById("date").value = getTodaysDate()
 
 // Get the last weight
-var xhr = new XMLHttpRequest()
-
-xhr.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var weights = JSON.parse(this.responseText)
+getData(endPoint + "?datefilter=max", function(response) {
+  if(response != 0) {
+    var weights = JSON.parse(response)
     document.getElementById("lastWeighDate").innerHTML = dateOnly(weights[0].date)
     document.getElementById("lastWeight").innerHTML = weights[0].weight
     document.getElementById("lastWeighInfo").style.display = 'block'
   }
-}
+})
 
-xhr.open("GET", endPoint + "/?datefilter=max", true)
-xhr.send()
+// Get the date history
+getData(endPoint + "?datefilter=last7", function(response) {
+  if(response != 0) {
+    var historyTable = "<h4>History</h4><table>"
+    var weightHistory = JSON.parse(response)
+    weightHistory.forEach(function(reading) {
+      historyTable = historyTable + "<tr><td>" + dateOnly(reading.date) + "</td><td>" + reading.weight + "</td></tr>"
+    })
+
+    historyTable = historyTable + "</table>"
+    document.getElementById("history").innerHTML = historyTable
+  }
+})
 
 // This was lifted (mostely) from MDN
 function sendData() {
@@ -114,6 +108,8 @@ function successfulSend(responseText) {
   document.getElementById("responseMessage").style.display = "block"
 }
 
+
+
 // XHR failure function
 function failSend() {
   document.getElementById("weightEntryForm").style.display = "none"
@@ -123,6 +119,20 @@ function failSend() {
 
   document.getElementById("responseMessage").innerHTML = responseMessage
   document.getElementById("responseMessage").style.display = "block"
+}
+
+// getData Function
+function getData(url, callback) {
+  var xhr = new XMLHttpRequest()
+
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      callback(this.responseText)
+    } 
+  }
+
+  xhr.open("GET", url, true)
+  xhr.send()
 }
 
 // Round function
@@ -141,23 +151,29 @@ function addAnother() {
   document.getElementById("responseMessage").style.display = "none"
 }
 
+// This function returns a short date, in a particular format because the API is inserting time zone
+// TODO: There are some time zone issues here
 function dateOnly(dateString) {
   var longDate = new Date(dateString)
-  var dd = longDate.getUTCDate()
-  var mm = longDate.getUTCMonth()+1 //January is 0!
+  var dd = zeroPad(longDate.getUTCDate(), 2)
+  var mm = zeroPad(longDate.getUTCMonth()+1, 2) //January is 0!
   var yyyy = longDate.getUTCFullYear()
-  var shortDate
 
-  // Add leading zero if needed to day and month
-  if(dd < 10) {
-      dd = '0' + dd
-  } 
-  if(mm < 10) {
-      mm = '0' + mm
-  } 
+  return yyyy + '-' + mm + '-' + dd
+}
 
-  // Populate the field
-  shortDate = yyyy + '-' + mm + '-' + dd
+function getTodaysDate() {
+  var today = new Date()
+  var dd = zeroPad(today.getDate(), 2)
+  var mm = zeroPad(today.getMonth()+1, 2) //January is 0!
+  var yyyy = today.getFullYear()
 
-  return shortDate
+  return yyyy + '-' + mm + '-' + dd
+}
+
+function zeroPad(number, length) {
+  if(number.toString().length < length) {
+    number = Array(length - number.toString().length + 1).join("0") + number
+  }
+  return number
 }
