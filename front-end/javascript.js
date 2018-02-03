@@ -17,7 +17,7 @@ getData(endPoint + "?datefilter=max", function(response) {
 // Get the date history
 getData(endPoint + "?datefilter=last7", function(response) {
   if(response != 0) {
-    var historyTable = "<h4>History</h4><table>"
+    var historyTable = "<h4>History</h4><table id='historyTable'>"
     var weightHistory = JSON.parse(response)
     weightHistory.forEach(function(reading) {
       historyTable = historyTable + "<tr><td>" + dateOnly(reading.date) + "</td><td>" + reading.weight + "</td></tr>"
@@ -78,6 +78,11 @@ function successfulSend(responseText) {
      // Find out how much was gained or lost, round to 2 decimal places
     var lost = round(Number(document.getElementById("lastWeight").innerHTML) - Number(document.getElementById("weight").value), 2)
 
+    // Insert new weight at the top of the history table
+    var history = document.getElementById("historyTable").innerHTML
+    history = "<tr><td>" + document.getElementById("date").value + "</td><td>" + document.getElementById("weight").value + "</td></tr>" + history
+    console.log(history)
+    document.getElementById("historyTable").innerHTML = history
 
     if (lost > 0) {
       // Weight lost!
