@@ -1,5 +1,5 @@
 // API Endpoint
-var endPoint = "http://api.jpreardon.com/weights"
+var endPoint = "https://api.jpreardon.com/weights"
 
 // Put today's date in date field
 document.getElementById("date").value = getTodaysDate()
