@@ -20,7 +20,11 @@ I'm going to run this first bit right off my [worklog from the float plan app](h
 
 - Set up a new environment on Cloud 9
 - Rails 5 was already installed in the environment, upgraded to 6.
-
+- Generate new SSH key an add to github
+- Fetch a-new-day branch of the rewards repo from github
+- Create new rails application
+- Install yarn
+- Update the gem file/bundle install
 
 
 ## 2019-11-03
