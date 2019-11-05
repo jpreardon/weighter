@@ -27,6 +27,7 @@ I'm going to run this first bit right off my [worklog from the float plan app](h
 - Update the gem file/bundle install
 - Make a simple 'hello world' modification
 - Create production group for postgresql gem
+- Install heroku, deploy to production
 
 ## 2019-11-03
 
