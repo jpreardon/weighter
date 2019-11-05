@@ -25,7 +25,8 @@ I'm going to run this first bit right off my [worklog from the float plan app](h
 - Create new rails application
 - Install yarn
 - Update the gem file/bundle install
-
+- Make a simple 'hello world' modification
+- Create production group for postgresql gem
 
 ## 2019-11-03
 
