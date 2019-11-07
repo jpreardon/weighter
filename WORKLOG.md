@@ -19,11 +19,8 @@ Time to get user auth going...
 
 - Thought about using [Devise](https://github.com/plataformatec/devise) but decided against it after looking at their README where they reommend rolling your own for beginners. So, it's back the the Hartl book :)
 - Removed this from /views/layouts/application.html.erb
-
-```
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-```
+- Installed webpack
+- Got up to chapter 4 in the book, subscription required...
 
 
 ## 2019-11-04
