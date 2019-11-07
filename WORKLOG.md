@@ -2,7 +2,6 @@
 
 ## TODO
 
-- Get environment set up
 - Get basic user auth working (I think I steal from the Float Plan App for this)
 - Add weight tracking
 - Import old weight data
@@ -13,6 +12,19 @@
   - Exercise
   - Good habits (like journaling etc.)
   - Meal log
+ 
+## 2019-11-06
+
+Time to get user auth going...
+
+- Thought about using [Devise](https://github.com/plataformatec/devise) but decided against it after looking at their README where they reommend rolling your own for beginners. So, it's back the the Hartl book :)
+- Removed this from /views/layouts/application.html.erb
+
+```
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+```
+
 
 ## 2019-11-04
 
