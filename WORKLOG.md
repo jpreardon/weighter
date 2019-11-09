@@ -2,9 +2,8 @@
 
 ## TODO
 
-- Add weight tracking
-- Import old weight data
-- Push to prod, and use
+- Improve/optimize weight entry experience 
+- Test coverage for weights
 - Add a simple visualization
 - Post MVP trackers
   - Water
@@ -12,6 +11,8 @@
   - Good habits (like journaling etc.)
   - Meal log
 - Get user auth working? (I think I steal from the Float Plan App for this)
+- Drop "weight" table
+- Remove old web pages (from old app)
 
 ## 2019-11-09
 
@@ -20,14 +21,17 @@ After some additional thought, I've decided to forego the (secured-password) use
 - Research basic http-auth
 - Add super basic http auth with [HttpAuthentication](https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html)
 - Make sure tests test authentication
-- Add some super basic validations to the weight model
-- Add actions and views for weight
 - Change production database adapter from postgresql to mysql
 
 Now lets get the really basic weight tracking working...
 
 - Create weight resource
 - Set precision on weight field and migrate
+- Add some super basic validations to the weight model
+- Add actions and views for weight
+- Import old weight data
+- Push to prod, and use
+- Shut off the old API (the old DB table is still there)
  
 ## 2019-11-06
 
