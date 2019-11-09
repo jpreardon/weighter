@@ -2,7 +2,6 @@
 
 ## TODO
 
-- Get basic user auth working (I think I steal from the Float Plan App for this)
 - Add weight tracking
 - Import old weight data
 - Push to prod, and use
@@ -12,6 +11,15 @@
   - Exercise
   - Good habits (like journaling etc.)
   - Meal log
+- Get user auth working? (I think I steal from the Float Plan App for this)
+
+## 2019-11-09
+
+After some additional thought, I've decided to forego the (secured-password) user auth in favor of getting weight tracking working. After all, I'm the only user of this. I would like something simple though. I'll look into basic http auth.
+
+- Research basic http-auth
+- Add super basic http auth with [HttpAuthentication](https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html)
+- Make sure tests test authentication
  
 ## 2019-11-06
 
