@@ -21,5 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: Unicode 
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV.fetch("DB_NAME") %>
+  username: <%= ENV.fetch("DB_USERNAME") %>
+  password: <%= ENV.fetch("DB_PASSWORD") %>
+  host: <%= ENV.fetch("DB_HOST") %>
+  port: <%= ENV.fetch("DB_PORT") %>

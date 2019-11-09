@@ -22,6 +22,7 @@ After some additional thought, I've decided to forego the (secured-password) use
 - Make sure tests test authentication
 - Add some super basic validations to the weight model
 - Add actions and views for weight
+- Change production database adapter from postgresql to mysql
 
 Now lets get the really basic weight tracking working...
 
