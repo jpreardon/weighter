@@ -1,0 +1,10 @@
+<% provide(:title, "Weights") %>
+<h1>Rewards</h1>
+
+<%= link_to "Add new weight", new_weight_path %>
+
+<ul>
+<% @weights.each do | weight | %>
+  <li><%= link_to weight.date.strftime("%d-%b-%Y"), weight %>: <%= weight.weight %></li>
+<% end %>
+</ul>

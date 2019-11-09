@@ -20,10 +20,13 @@ After some additional thought, I've decided to forego the (secured-password) use
 - Research basic http-auth
 - Add super basic http auth with [HttpAuthentication](https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html)
 - Make sure tests test authentication
+- Add some super basic validations to the weight model
+- Add actions and views for weight
 
 Now lets get the really basic weight tracking working...
 
 - Create weight resource
+- Set precision on weight field and migrate
  
 ## 2019-11-06
 

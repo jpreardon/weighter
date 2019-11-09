@@ -1,0 +1,12 @@
+<% provide(:title, "Edit Weight") %>
+<h1>Edit Weight</h1>
+
+<%= form_for(@weight) do |f| %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  
+  <%= f.label :weight %>
+  <%= f.text_field :weight %>
+  
+  <%= f.submit %>
+<% end %>
