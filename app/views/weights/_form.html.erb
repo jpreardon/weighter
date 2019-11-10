@@ -1,16 +1,18 @@
 <%= form_for(@weight) do |f| %>
-  <%= f.label :date %>
-  <% if @weight.date %>
-    <%= formatDate(@weight.date) %>
-  <% else %>
-    <%= f.date_field :date, value:DateTime.now.to_date %>
-  <% end %>
+  <div class="form-group">
+    <%= f.label :date %>
+    <% if @weight.date %>
+      <span class="form-control" readonly><%= formatDate(@weight.date) %> </span>
+    <% else %>
+      <%= f.date_field :date, value:DateTime.now.to_date, class: "form-control" %>
+    <% end %>
+  </div>
   
-  <%= f.label :weight %>
-  <%= f.text_field :weight %>
+  <div class="form-group">
+    <%= f.label :weight %>
+    <%= f.text_field :weight, class: "form-control" %>
+  </div>
   
-  <br>
-  
-  <%= link_to "cancel", yield(:cancel_path)  %>
-  <%= f.submit %>
+  <%= link_to "Cancel", yield(:cancel_path), class: "btn btn-outline-secondary"  %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>
