@@ -22,6 +22,8 @@
 - Tweak styles a bit
 - Make the weight#index the root page
 
+At this point, this app is working as good as the previous one. With the added bonus of being able to edit weights. There are a couple more things I'd like to do before adding additional tracking.
+
 ## 2019-11-09
 
 After some additional thought, I've decided to forego the (secured-password) user auth in favor of getting weight tracking working. After all, I'm the only user of this. I would like something simple though. I'll look into basic http auth.
