@@ -1,12 +1,5 @@
 <% provide(:title, "New Weight") %>
+<% provide(:cancel_path, weights_path) %>
 <h1>Add a weight</h1>
 
-<%= form_for(@weight) do |f| %>
-  <%= f.label :date %>
-  <%= f.date_field :date, value:DateTime.now.to_date %>
-  
-  <%= f.label :weight %>
-  <%= f.text_field :weight %>
-  
-  <%= f.submit %>
-<% end %>
+<%= render "form" %>

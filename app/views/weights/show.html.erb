@@ -1,8 +1,10 @@
 <% provide(:title, "Weight") %>
 <h1>Weight</h1>
 <p>On <%= formatDate(@weight.date) %> your weight was <%= @weight.weight %>.</p>
-<%= link_to "Edit weight", edit_weight_path %>
 <%= link_to "Delete weight", @weight, method: :delete, 
                                       data: { confirm: 'Are you sure?' },
                                       class: "btn btn-outline-danger" %>
+<%= link_to "Edit weight", edit_weight_path %>
+<%= link_to "List weights", weights_path %>
+
                                       

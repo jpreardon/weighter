@@ -1,0 +1,16 @@
+<%= form_for(@weight) do |f| %>
+  <%= f.label :date %>
+  <% if @weight.date %>
+    <%= formatDate(@weight.date) %>
+  <% else %>
+    <%= f.date_field :date, value:DateTime.now.to_date %>
+  <% end %>
+  
+  <%= f.label :weight %>
+  <%= f.text_field :weight %>
+  
+  <br>
+  
+  <%= link_to "cancel", yield(:cancel_path)  %>
+  <%= f.submit %>
+<% end %>
