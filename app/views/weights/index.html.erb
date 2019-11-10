@@ -5,6 +5,6 @@
 
 <ul>
 <% @weights.each do | weight | %>
-  <li><%= link_to weight.date.strftime("%d-%b-%Y"), weight %>: <%= weight.weight %></li>
+  <li><%= link_to formatDate(weight.date), weight %>: <%= weight.weight %></li>
 <% end %>
 </ul>

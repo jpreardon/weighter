@@ -1,6 +1,6 @@
 <% provide(:title, "Weight") %>
 <h1>Weight</h1>
-<p>On <%= @weight.date.strftime("%d-%b-%Y") %> your weight was <%= @weight.weight %>.</p>
+<p>On <%= formatDate(@weight.date) %> your weight was <%= @weight.weight %>.</p>
 <%= link_to "Edit weight", edit_weight_path %>
 <%= link_to "Delete weight", @weight, method: :delete, 
                                       data: { confirm: 'Are you sure?' },

@@ -14,6 +14,10 @@
 - Drop "weight" table
 - Remove old web pages (from old app)
 
+## 2019-11-10
+
+- Add a helper to format the dates
+
 ## 2019-11-09
 
 After some additional thought, I've decided to forego the (secured-password) user auth in favor of getting weight tracking working. After all, I'm the only user of this. I would like something simple though. I'll look into basic http auth.
