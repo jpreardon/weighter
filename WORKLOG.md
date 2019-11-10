@@ -20,6 +20,7 @@
 - Refactor weight form to partial, make date read-only on edit.
 - Add bootstrap and style pages.
 - Tweak styles a bit
+- Make the weight#index the root page
 
 ## 2019-11-09
 
