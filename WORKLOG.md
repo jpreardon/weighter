@@ -19,6 +19,7 @@
 - Default new date entry to today and make it a date field
 - Refactor weight form to partial, make date read-only on edit.
 - Add bootstrap and style pages.
+- Tweak styles a bit
 
 ## 2019-11-09
 
