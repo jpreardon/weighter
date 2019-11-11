@@ -13,6 +13,10 @@
 - Drop "weight" table
 - Remove old web pages (from old app)
 
+## 2019-11-11
+
+Make the weight input a number field
+
 ## 2019-11-10
 
 - Add a helper to format the dates
