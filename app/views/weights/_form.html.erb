@@ -13,6 +13,6 @@
     <%= f.text_field :weight, class: "form-control" %>
   </div>
   
-  <%= link_to "Cancel", yield(:cancel_path), class: "btn btn-outline-secondary"  %>
+  <%= link_to t("cancel"), yield(:cancel_path), class: "btn btn-outline-secondary"  %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

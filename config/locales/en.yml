@@ -30,4 +30,11 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  add-new-weight: "Add weight"
+  cancel: "Cancel"
+  date: "Date"
+  weight: "Weight"
+  weight-edit-title: "Edit weight"
+  weight-create-title: "Add weight"
+  weight-show-title: "Weight"
+  weight-index-title: "All weights"

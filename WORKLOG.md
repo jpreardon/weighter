@@ -21,6 +21,7 @@
 - Add bootstrap and style pages.
 - Tweak styles a bit
 - Make the weight#index the root page
+- Abstract text to i18n file.
 
 At this point, this app is working as good as the previous one. With the added bonus of being able to edit weights. There are a couple more things I'd like to do before adding additional tracking.
 
