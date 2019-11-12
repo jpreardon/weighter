@@ -18,7 +18,16 @@ class WeightsController < ApplicationController
   end
   
   def index
-    @weights = Weight.all.order(date: :desc)
+    # Show about 2 weeks worth of weights by default, allow all or any
+    # other number to be shown with by setting the :numrecords
+    case params[:numrecords]
+    when "all"
+       @weights = Weight.all.order(date: :desc)
+    when String
+      @weights = Weight.all.order(date: :desc).first(params[:numrecords].to_i)
+    else
+       @weights = Weight.all.order(date: :desc).first(14)
+    end
   end
   
   def edit

@@ -27,6 +27,7 @@
           <% end %>
       </tbody>
     </table>
+    <%= link_to t("show-all-weights"), weights_path(numrecords: "all"), class: "btn btn-outline-secondary" unless params[:numrecords] == "all" %>
   </div>
 </div>
 

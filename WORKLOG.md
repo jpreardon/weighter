@@ -2,20 +2,21 @@
 
 ## TODO
 
-- Test coverage for weights
-- Add a simple visualization
 - Post MVP trackers
   - Water
   - Exercise
   - Good habits (like journaling etc.)
   - Meal log
+- Test coverage for weights
+- Add a simple visualization
 - Get user auth working? (I think I steal from the Float Plan App for this)
 - Drop "weight" table
 - Remove old web pages (from old app)
 
 ## 2019-11-11
 
-Make the weight input a number field
+- Make the weight input a number field
+- Load fewer weight records
 
 ## 2019-11-10
 
