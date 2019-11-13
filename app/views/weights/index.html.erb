@@ -11,6 +11,32 @@
 </div>
 <div class="row">
   <div class="col-sm">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">Minimum</div>
+      <div class="card-body text-dark">
+        <p class="card-text display-4"><%= @weights.min_by(&:weight).weight %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">Maximum</div>
+      <div class="card-body text-dark">
+        <p class="card-text display-4"><%= @weights.max_by(&:weight).weight %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">Average</div>
+      <div class="card-body text-dark">
+        <p class="card-text display-4"><%= averageWeight(@weights) %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm">
     <table class="table table-hover table-sm">
         <thead>
           <tr>

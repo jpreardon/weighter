@@ -12,6 +12,10 @@
 - Get user auth working? (I think I steal from the Float Plan App for this)
 - Drop "weight" table
 - Remove old web pages (from old app)
+- 
+## 2019-11-12
+
+Add min/max/average weights to index page
 
 ## 2019-11-11
 
