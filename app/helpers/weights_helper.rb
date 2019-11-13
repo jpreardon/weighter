@@ -5,6 +5,6 @@ module WeightsHelper
     weight_array.each do | weight |
       average += weight.weight
     end
-    return average / weight_array.length
+    return number_with_precision(average / weight_array.length, precision: 1)  
   end
 end
