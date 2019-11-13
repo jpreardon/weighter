@@ -48,7 +48,7 @@
           <% @weights.each do | weight | %>
             <tr>
               <th scope="row"><%= link_to formatDate(weight.date), weight %></th>
-              <td><%= weight.weight %></td>
+              <td><span class="<%= weight.weight <= averageWeight(@weights).to_d ? "text-success" : "text-danger" %>"><%= weight.weight %></span></td>
             </tr>
           <% end %>
       </tbody>
