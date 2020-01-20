@@ -2,6 +2,7 @@
 
 ## TODO
 
+- Get local dev environment set up
 - Fix user auth working, I don't need a whole multi-user thing, but auth needs to be cached
 - Test coverage for weights
 - Add a simple visualization
