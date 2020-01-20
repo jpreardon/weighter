@@ -3,6 +3,7 @@
 ## TODO
 
 - Get local dev environment set up
+- Rename app
 - Fix user auth working, I don't need a whole multi-user thing, but auth needs to be cached
 - Test coverage for weights
 - Add a simple visualization
@@ -15,9 +16,11 @@ I've been using this to track weight since November. Today, I went ahead and rem
 I was going to start adding more functionality to track more stuff things like water consumption, exercise and other good habits I wanted to cultivate. Then two things happened in the intervening months:
 
 - I read a [book about forming good habits](https://gretchenrubin.com/books/better-than-before/about-the-book/). One of of my takeaways was that for me, tying rewards like beer to habits like exercise (just to take one example), might not be that effective. It may be better just to concentrate on forming the good habits like exercise more, drink less beer.
-- I found this [Streaks app](https://streaksapp.com/) that does almost exactly what I wanted to do. It even looks quite a bit like I wanted the UI to look for this.
+- I found this [Streaks app](https://streaksapp.com/) that does almost exactly what I wanted to do. It even looks quite a bit like I wanted the UI to look for this, but way better than what I would have done.
 
 So, I've been using Streaks for a couple days, love it. So, I'm going to shift gears a bit on this project. I don't need to track all sorts of things right now, I'll just do weight--which I'm already doing. I'm going to adjust the todo list a bit and try to wrap this up soon.
+
+I found a couple really basic design ideas, those are now in the archive directory here.
 
 ## 2019-12-21
 
