@@ -8,6 +8,7 @@
 - Test coverage for weights
 - Add a simple visualization
 - Get more advanced with visualization?
+- Rename database
 
 ## 2020-01-21
 
@@ -16,6 +17,7 @@ Rename app:
 - Change the module name in application.rb
 - Add the application-title to the local, use it in the view titles
 - Search through files and replace any last references to "Rewards"
+- Update heroku name, DNS, git repo (not renaming database yet, added to TODO)
 
 ## 2020-01-20
 
