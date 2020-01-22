@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @base_title = "Rewards"
+    @base_title = "Weighter"
     @auth_headers = {"Authorization" => "Basic #{Base64.encode64('test:pass')}"}
   end
   

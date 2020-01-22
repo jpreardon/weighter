@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><%= yield(:title) %> | Rewards</title>
+    <title><%= yield(:title) %> | <%= t("application-name") %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 
   <body>
     <nav class="navbar navbar-dark bg-dark mb-2">
-      <span class="navbar-brand">Rewards</span>
+      <span class="navbar-brand"><%= t("application-name") %></span>
     </nav>
     <div class="container">
       <%= yield %>

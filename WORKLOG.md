@@ -2,12 +2,20 @@
 
 ## TODO
 
+- Remove static pages controller and pages
 - Get local dev environment set up
-- Rename app
 - Fix user auth working, I don't need a whole multi-user thing, but auth needs to be cached
 - Test coverage for weights
 - Add a simple visualization
 - Get more advanced with visualization?
+
+## 2020-01-21
+
+Rename app:
+
+- Change the module name in application.rb
+- Add the application-title to the local, use it in the view titles
+- Search through files and replace any last references to "Rewards"
 
 ## 2020-01-20
 

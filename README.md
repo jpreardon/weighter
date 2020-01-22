@@ -1,6 +1,6 @@
-# Rewards
+# Weighter
 
-This is a to be a simple app that keeps track of things I should be doing (mostly foods and exercise) and allows for rewards (mostly beer or other treats).
+This is a to be a simple app that tracks weight, daily.
 
 ## Setup
 
