@@ -4,11 +4,18 @@
 
 - Remove static pages controller and pages
 - Get local dev environment set up
-- Fix user auth working, I don't need a whole multi-user thing, but auth needs to be cached
 - Test coverage for weights
 - Add a simple visualization
 - Get more advanced with visualization?
 - Rename database
+
+## 2020-01-22
+
+Fix user auth, I need to log in daily. I don't need a whole multi-user thing, but auth needs to be cached.
+
+- Research
+  - [Rails HTTP Digest Authentication](https://guides.rubyonrails.org/action_controller_overview.html#http-authentications)
+- Replace basic auth with http digest
 
 ## 2020-01-21
 
