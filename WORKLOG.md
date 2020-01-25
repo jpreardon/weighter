@@ -23,7 +23,8 @@ Getting local dev environment set--just to get off of Cloud9 (it's nice, but I'd
 - Now it runs locally, but I realized that it doesn't play nice when the DB is empty. I should fix that at some point--adding to TODO.
 - The few tests I have are failing, but they are failing on the Cloud9 environment too. Another thing for the TODO list. 
 - Update .gitignore for all sqllite files
-
+- Updated heroku and pushed
+- Deleted AWS instances, that will save me about $2 a month!!!
 
 ## 2020-01-23
 
