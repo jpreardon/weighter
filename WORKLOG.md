@@ -8,7 +8,6 @@
 - Add a simple visualization
 - Get more advanced with visualization?
 - Rename database
-- Make app deal with an empty weights table gracefully, right not it blows up because of the min/max/avg calculations.
 
 ## 2020-01-25
 
@@ -25,6 +24,8 @@ Getting local dev environment set--just to get off of Cloud9 (it's nice, but I'd
 - Update .gitignore for all sqllite files
 - Updated heroku and pushed
 - Deleted AWS instances, that will save me about $2 a month!!!
+
+Deal with an empty weights table more gracefully instead of blowing up.
 
 ## 2020-01-23
 

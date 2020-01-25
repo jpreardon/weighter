@@ -6,55 +6,60 @@
 </div>
 <div class="row mb-3">
   <div class="col-sm">
+    <% if @weights.empty? %>
+      <p>No weights, man... ¯\_(ツ)_/¯</p>
+    <% end %>
     <%= link_to t("add-new-weight"), new_weight_path, class: "btn btn-primary" %>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm">
-    <div class="card border-dark mb-3" style="max-width: 18rem;">
-      <div class="card-header">Minimum</div>
-      <div class="card-body text-dark">
-        <p class="card-text display-4"><%= @weights.min_by(&:weight).weight %></p>
+<% if !@weights.empty? %>
+  <div class="row">
+    <div class="col-sm">
+      <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">Minimum</div>
+        <div class="card-body text-dark">
+          <p class="card-text display-4"><%= @weights.min_by(&:weight).weight %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">Maximum</div>
+        <div class="card-body text-dark">
+          <p class="card-text display-4"><%= @weights.max_by(&:weight).weight %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">Average</div>
+        <div class="card-body text-dark">
+          <p class="card-text display-4"><%= averageWeight(@weights) %></p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm">
-    <div class="card border-dark mb-3" style="max-width: 18rem;">
-      <div class="card-header">Maximum</div>
-      <div class="card-body text-dark">
-        <p class="card-text display-4"><%= @weights.max_by(&:weight).weight %></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card border-dark mb-3" style="max-width: 18rem;">
-      <div class="card-header">Average</div>
-      <div class="card-body text-dark">
-        <p class="card-text display-4"><%= averageWeight(@weights) %></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm">
-    <table class="table table-hover table-sm">
-        <thead>
-          <tr>
-            <th scope="col"><%= t("date") %></th>
-            <th scope="col"><%= t("weight") %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @weights.each do | weight | %>
+  <div class="row">
+    <div class="col-sm">
+      <table class="table table-hover table-sm">
+          <thead>
             <tr>
-              <th scope="row"><%= link_to formatDateWeekdays(weight.date), weight %></th>
-              <td><span class="<%= weight.weight <= averageWeight(@weights).to_d ? "text-success" : "text-danger" %>"><%= weight.weight %></span></td>
+              <th scope="col"><%= t("date") %></th>
+              <th scope="col"><%= t("weight") %></th>
             </tr>
-          <% end %>
-      </tbody>
-    </table>
-    <%= link_to t("show-all-weights"), weights_path(numrecords: "all"), class: "btn btn-outline-secondary" unless params[:numrecords] == "all" %>
+          </thead>
+          <tbody>
+            <% @weights.each do | weight | %>
+              <tr>
+                <th scope="row"><%= link_to formatDateWeekdays(weight.date), weight %></th>
+                <td><span class="<%= weight.weight <= averageWeight(@weights).to_d ? "text-success" : "text-danger" %>"><%= weight.weight %></span></td>
+              </tr>
+            <% end %>
+        </tbody>
+      </table>
+      <%= link_to t("show-all-weights"), weights_path(numrecords: "all"), class: "btn btn-outline-secondary" unless params[:numrecords] == "all" %>
   </div>
+  <% end %>
 </div>
 
 
