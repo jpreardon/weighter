@@ -9,6 +9,13 @@
 - Get more advanced with visualization?
 - Rename database
 
+## 2020-01-23
+
+Continuing with authenication...
+
+- Research
+  - [How Rails Sessions Work](https://www.justinweiss.com/articles/how-rails-sessions-work/)
+
 ## 2020-01-22
 
 Fix user auth, I need to log in daily. I don't need a whole multi-user thing, but auth needs to be cached.
