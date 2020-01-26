@@ -7,7 +7,7 @@
 <div class="row mb-3">
   <div class="col-sm">
     <% if @weights.empty? %>
-      <p>No weights, man... ¯\_(ツ)_/¯</p>
+      <p><%= t("no-weights-message") %></p>
     <% end %>
     <%= link_to t("add-new-weight"), new_weight_path, class: "btn btn-primary" %>
   </div>
@@ -16,7 +16,7 @@
   <div class="row">
     <div class="col-sm">
       <div class="card border-dark mb-3" style="max-width: 18rem;">
-        <div class="card-header">Minimum</div>
+        <div class="card-header"><%= t("minimum") %></div>
         <div class="card-body text-dark">
           <p class="card-text display-4"><%= @weights.min_by(&:weight).weight %></p>
         </div>
@@ -24,7 +24,7 @@
     </div>
     <div class="col-sm">
       <div class="card border-dark mb-3" style="max-width: 18rem;">
-        <div class="card-header">Maximum</div>
+        <div class="card-header"><%= t("maximum") %></div>
         <div class="card-body text-dark">
           <p class="card-text display-4"><%= @weights.max_by(&:weight).weight %></p>
         </div>
@@ -32,7 +32,7 @@
     </div>
     <div class="col-sm">
       <div class="card border-dark mb-3" style="max-width: 18rem;">
-        <div class="card-header">Average</div>
+        <div class="card-header"><%= t("average") %></div>
         <div class="card-body text-dark">
           <p class="card-text display-4"><%= averageWeight(@weights) %></p>
         </div>

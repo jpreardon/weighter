@@ -11,21 +11,20 @@
 
 ## 2020-01-25
 
-Getting local dev environment set--just to get off of Cloud9 (it's nice, but I'd rather run on my local):
-
-- Started with [this post](https://usabilityetc.com/articles/ruby-on-mac-os-x-with-rvm/) which points to the [RVM install page](https://rvm.io/rvm/install)
-- Ran the install script (I already had GPG installed)
-- ```bundle install``` this took a long time, it failed to instally msql, which I only need for prod anyway, so I ```bundle install --without production```
-- Tried to run the rails server, it failed with a message about yarn being out of date
-- Install yarn, try to run server again, same problem run ```yarn```, runs, but there's an "Error loading the 'postgresql' Active Record adapter". [Stack overflow delivers](https://stackoverflow.com/questions/52316760/error-loading-the-postgresql-active-record-adapter-missing-a-gem-it-depends-o).
-- Ran rails server again, now it complains about migrations, as expected so ```rails db:migrate```
-- Now it runs locally, but I realized that it doesn't play nice when the DB is empty. I should fix that at some point--adding to TODO.
-- The few tests I have are failing, but they are failing on the Cloud9 environment too. Another thing for the TODO list. 
-- Update .gitignore for all sqllite files
-- Updated heroku and pushed
-- Deleted AWS instances, that will save me about $2 a month!!!
-
-Deal with an empty weights table more gracefully instead of blowing up.
+- Getting local dev environment set--just to get off of Cloud9 (it's nice, but I'd rather run on my local):
+    - Started with [this post](https://usabilityetc.com/articles/ruby-on-mac-os-x-with-rvm/) which points to the [RVM install page](https://rvm.io/rvm/install)
+    - Ran the install script (I already had GPG installed)
+    - ```bundle install``` this took a long time, it failed to instally msql, which I only need for prod anyway, so I ```bundle install --without production```
+    - Tried to run the rails server, it failed with a message about yarn being out of date
+    - Install yarn, try to run server again, same problem run ```yarn```, runs, but there's an "Error loading the 'postgresql' Active Record adapter". [Stack overflow delivers](https://stackoverflow.com/questions/52316760/error-loading-the-postgresql-active-record-adapter-missing-a-gem-it-depends-o).
+    - Ran rails server again, now it complains about migrations, as expected so ```rails db:migrate```
+    - Now it runs locally, but I realized that it doesn't play nice when the DB is empty. I should fix that at some point--adding to TODO.
+    - The few tests I have are failing, but they are failing on the Cloud9 environment too. Another thing for the TODO list. 
+    - Update .gitignore for all sqllite files
+    - Updated heroku and pushed
+    - Deleted AWS instances, that will save me about $2 a month!!!
+- Deal with an empty weights table more gracefully instead of blowing up.
+- Replace text on index page with i18l
 
 ## 2020-01-23
 
