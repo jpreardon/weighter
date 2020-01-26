@@ -14,5 +14,5 @@
   </div>
   
   <%= link_to t("cancel"), yield(:cancel_path), class: "btn btn-outline-secondary"  %>
-  <%= f.submit class: "btn btn-primary" %>
+  <%= f.submit yield(:submit_button_text), class: "btn btn-primary" %>
 <% end %>

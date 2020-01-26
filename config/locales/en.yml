@@ -31,10 +31,13 @@
 
 en:
   application-name: 'Weighter'
-  add-new-weight: 'Add weight'
-  average: 'Average' 
+  add-new-weight: 'Add Weight'
+  average: 'Average'
+  back-to-list: '< Back to List'
   cancel: 'Cancel'
   date: 'Date'
+  delete: 'Delete'
+  edit-weight: 'Edit Weight'
   maximum: 'Maximum'
   minimum: 'Minimum'
   no-weights-message: 'No weights, man... ¯\_(ツ)_/¯'

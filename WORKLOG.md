@@ -9,6 +9,10 @@
 - Get more advanced with visualization?
 - Rename database
 
+## 2020-01-26
+
+Replace some more hard-coded text with i18l.
+
 ## 2020-01-25
 
 - Getting local dev environment set--just to get off of Cloud9 (it's nice, but I'd rather run on my local):
