@@ -10,6 +10,7 @@ module Weighter
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.session_store :cookie_store, expire_after: 30.days
     #config.web_console.whitelisted_ips = '64.120.44.115'
 
     # Settings in config/environments/* take precedence over those specified here.

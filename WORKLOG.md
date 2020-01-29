@@ -8,6 +8,7 @@
 - Add a simple visualization
 - Get more advanced with visualization?
 - Rename database
+- Get a real web server running in prod https://devcenter.heroku.com/articles/ruby-default-web-server  
 
 ## 2020-01-28
 
@@ -15,7 +16,7 @@ Auth!!! (this is taking forever)
 
 [Stack Overflow delivers](https://stackoverflow.com/questions/6358284/get-password-inside-authenticate-or-request-with-http-digest)
 
-The sessions don't seem to persist if the browser is closed. I have a feeling this is a localhost thing, so I'm going to commit and send to prod to find out.
+The sessions were not persisting after the browser was closed. I thought this was a localhost thing, but the same happened in prod. Turns the default expiry for sessions is "session". I added a line to the config/application.rb file to set the expiry to 30 days. 
 
 ## 2020-01-26
 
