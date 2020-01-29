@@ -9,6 +9,14 @@
 - Get more advanced with visualization?
 - Rename database
 
+## 2020-01-28
+
+Auth!!! (this is taking forever)
+
+[Stack Overflow delivers](https://stackoverflow.com/questions/6358284/get-password-inside-authenticate-or-request-with-http-digest)
+
+The sessions don't seem to persist if the browser is closed. I have a feeling this is a localhost thing, so I'm going to commit and send to prod to find out.
+
 ## 2020-01-26
 
 - Replace some more hard-coded text with i18l.

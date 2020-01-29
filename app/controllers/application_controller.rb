@@ -1,15 +1,35 @@
 class ApplicationController < ActionController::Base
-    before_action :authenticate
+    before_action :require_user
     # http_basic_authenticate_with name: ENV.fetch('HTTP_USER'), password: ENV.fetch('HTTP_PASSWORD')
-    
+
     private
-    
+      def current_user
+        if session[:username]
+          session[:username]
+        end
+      end
+
+      def require_user
+        unless current_user
+          load_user
+        end
+      end
+
+      def load_user
+        result = authenticate
+        if result == 401
+          return 401
+        elsif result == true
+          session[:username] = ENV.fetch('HTTP_USER')
+        end
+      end
+
       def authenticate
         authenticate_or_request_with_http_digest do |username|
           if username == ENV.fetch('HTTP_USER')
             ENV.fetch('HTTP_PASSWORD')
           else
-            nil
+            false
           end
         end
       end
