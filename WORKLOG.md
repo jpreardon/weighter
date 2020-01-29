@@ -11,7 +11,7 @@
 
 ## 2020-01-26
 
-Replace some more hard-coded text with i18l.
+- Replace some more hard-coded text with i18l.
 
 ## 2020-01-25
 
