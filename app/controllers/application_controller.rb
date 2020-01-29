@@ -1,17 +1,16 @@
 class ApplicationController < ActionController::Base
     before_action :require_user
-    # http_basic_authenticate_with name: ENV.fetch('HTTP_USER'), password: ENV.fetch('HTTP_PASSWORD')
 
     private
-      def current_user
-        if session[:username]
-          session[:username]
-        end
-      end
-
       def require_user
         unless current_user
           load_user
+        end
+      end
+
+      def current_user
+        if session[:username]
+          session[:username]
         end
       end
 
