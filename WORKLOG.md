@@ -10,6 +10,10 @@
 - Rename database
 - Get a real web server running in prod https://devcenter.heroku.com/articles/ruby-default-web-server  
 
+## 2020-01-29
+
+Check that session username matches the server username (oops). Refactor auth code.
+
 ## 2020-01-28
 
 Auth!!! (this is taking forever)

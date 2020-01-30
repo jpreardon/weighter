@@ -2,15 +2,12 @@ class ApplicationController < ActionController::Base
     before_action :require_user
 
     private
-      def require_user
-        unless current_user
-          load_user
-        end
-      end
 
-      def current_user
-        if session[:username]
-          session[:username]
+      def require_user
+        if session[:username] == ENV.fetch('HTTP_USER')
+          true
+        else
+          load_user
         end
       end
 
