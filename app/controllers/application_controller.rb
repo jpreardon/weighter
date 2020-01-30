@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
         if session[:username] == ENV.fetch('HTTP_USER')
           true
         else
+          session.delete(:username)
           load_user
         end
       end

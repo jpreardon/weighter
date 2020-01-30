@@ -12,7 +12,9 @@
 
 ## 2020-01-29
 
-Check that session username matches the server username (oops). Refactor auth code.
+- Check that session username matches the server username (oops)
+- Refactor auth code
+- Clear session username variable when user names don't match
 
 ## 2020-01-28
 
