@@ -10,6 +10,20 @@
 - Rename database
 - Get a real web server running in prod https://devcenter.heroku.com/articles/ruby-default-web-server  
 
+## 2020-02-16
+
+Let's try to get a simple chart in here...
+
+- d3! I kind of know what needs to get done here...
+  - Add reference to d3
+  - On the index page, put the weights into an array so d3 can read it
+  - draw a simple chart
+  - Profit!
+
+- There's a [d3 gem](https://rubygems.org/gems/d3-rails/versions/5.9.2), but I don't really think I need it at this point. I just added a reference to the d3 site.
+- Did the [most basic of bar charts](https://bost.ocks.org/mike/bar/) in DIV form. This is like the hello world of d3 (I think).
+
+
 ## 2020-01-29
 
 - Check that session username matches the server username (oops)

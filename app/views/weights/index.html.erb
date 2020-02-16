@@ -15,6 +15,28 @@
 <% if !@weights.empty? %>
   <div class="row">
     <div class="col-sm">
+      <!-- DATAVIZ SECTION -->
+      <div id="chart">
+
+      </div>
+      <script>
+        const data = <%= @weights.reverse.to_json.html_safe %>
+
+        d3.select("#chart")
+          .style("margin-bottom", "24px")
+          .selectAll("div")
+            .data(data)
+          .enter().append("div")
+            .style("width", function(d) { return d.weight * 2 + "px" })
+            .style("padding-left", "8px")
+            .attr("class", "bg-primary text-light")
+            .text(function(d) {return d.weight })
+
+      </script>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
       <div class="card border-dark mb-3" style="max-width: 18rem;">
         <div class="card-header"><%= t("minimum") %></div>
         <div class="card-body text-dark">
