@@ -35,8 +35,6 @@
             .data(data)
           .enter().append("div")
             .style("width", function(d) { return x(d.weight) + "px" })
-            .style("padding-left", "8px")
-            .attr("class", "bg-primary text-light")
             .text(function(d) {return d.weight })
 
       </script>
