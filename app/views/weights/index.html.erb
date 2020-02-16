@@ -14,27 +14,36 @@
 </div>
 <% if !@weights.empty? %>
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm" id="chart-section">
       <!-- DATAVIZ SECTION -->
-      <div id="chart">
-
-      </div>
+      <svg id="chart"></svg>
       <script>
         const data = <%= @weights.reverse.to_json.html_safe %>
-        var weight_array = []
-        
-        data.forEach(element => weight_array.push(element.weight))
+        var width = document.getElementById("chart-section").offsetWidth
+        var barHeight = 20
 
         var x = d3.scaleLinear()
-          .domain([0, d3.max(weight_array)])
-          .range([0, document.getElementById("chart").offsetWidth])
+          .domain([0, d3.max(data, function(d) { return d.weight })])
+          .range([0, width])
 
-        d3.select("#chart")
-          .selectAll("div")
-            .data(data)
-          .enter().append("div")
-            .style("width", function(d) { return x(d.weight) + "px" })
-            .text(function(d) {return d.weight })
+        var chart = d3.select("#chart")
+          .attr("width", width)
+          .attr("height", barHeight * data.length)
+
+        var bar = chart.selectAll("g")
+          .data(data)
+        .enter().append("g")
+          .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")" })
+
+        bar.append("rect")
+          .attr("width", function(d) { return x(d.weight) })
+          .attr("height", barHeight - 1)
+
+        bar.append("text")
+          .attr("x", function(d) { return x(d.weight) - 3 })
+          .attr("y", barHeight / 2)
+          .attr("dy", ".35em")
+          .text(function(d) { return d.weight })
 
       </script>
     </div>

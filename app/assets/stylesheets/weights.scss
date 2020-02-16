@@ -8,8 +8,12 @@
     margin-bottom: $paragraph-margin-bottom;
 }
 
-#chart div {
-    color: $yiq-text-light;
-    background-color: $primary;
-    padding-left: $table-cell-padding;
+#chart rect {
+    fill: $primary;
+}
+
+#chart text {
+    fill: $yiq-text-light;
+    font: 10px sans-serif;
+    text-anchor: end;
 }
