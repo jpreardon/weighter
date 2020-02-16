@@ -21,13 +21,20 @@
       </div>
       <script>
         const data = <%= @weights.reverse.to_json.html_safe %>
+        var weight_array = []
+        
+        data.forEach(element => weight_array.push(element.weight))
+
+        var x = d3.scaleLinear()
+          .domain([0, d3.max(weight_array)])
+          .range([0, document.getElementById("chart").offsetWidth])
 
         d3.select("#chart")
           .style("margin-bottom", "24px")
           .selectAll("div")
             .data(data)
           .enter().append("div")
-            .style("width", function(d) { return d.weight * 2 + "px" })
+            .style("width", function(d) { return x(d.weight) + "px" })
             .style("padding-left", "8px")
             .attr("class", "bg-primary text-light")
             .text(function(d) {return d.weight })
