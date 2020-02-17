@@ -10,6 +10,10 @@
 - Rename database
 - Get a real web server running in prod https://devcenter.heroku.com/articles/ruby-default-web-server  
 
+## 2020-02-17
+
+- Time for [step 3](https://bost.ocks.org/mike/bar/3/) of charting...
+
 ## 2020-02-16
 
 Let's try to get a simple chart in here...
@@ -22,6 +26,7 @@ Let's try to get a simple chart in here...
 
 - There's a [d3 gem](https://rubygems.org/gems/d3-rails/versions/5.9.2), but I don't really think I need it at this point. I just added a reference to the d3 site.
 - Did the [most basic of bar charts](https://bost.ocks.org/mike/bar/) in DIV form. This is like the hello world of d3 (I think).
+- Converted the DIV chart to SVG. Yes, I'm just following "Let's Make a Bar Chart..."
 
 
 ## 2020-01-29

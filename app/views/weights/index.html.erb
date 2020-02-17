@@ -19,30 +19,32 @@
       <svg id="chart"></svg>
       <script>
         const data = <%= @weights.reverse.to_json.html_safe %>
-        var width = document.getElementById("chart-section").offsetWidth
-        var barHeight = 20
+        var width = 960
+        var height = 500
+        var barWidth = width / data.length
 
-        var x = d3.scaleLinear()
-          .domain([0, d3.max(data, function(d) { return d.weight })])
-          .range([0, width])
+        var y = d3.scaleLinear()
+          .range([height, 0])
+          .domain([d3.min(data, function(d) { return d.weight }) - 1, d3.max(data, function(d) { return d.weight })])
 
         var chart = d3.select("#chart")
           .attr("width", width)
-          .attr("height", barHeight * data.length)
+          .attr("height", height)
 
         var bar = chart.selectAll("g")
           .data(data)
         .enter().append("g")
-          .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")" })
+          .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)" })
 
         bar.append("rect")
-          .attr("width", function(d) { return x(d.weight) })
-          .attr("height", barHeight - 1)
+          .attr("y", function(d) { return y(d.weight) })
+          .attr("height", function(d) { return height - y(d.weight) })
+          .attr("width", barWidth - 1)
 
         bar.append("text")
-          .attr("x", function(d) { return x(d.weight) - 3 })
-          .attr("y", barHeight / 2)
-          .attr("dy", ".35em")
+          .attr("x", barWidth / 2)
+          .attr("y", function(d) { return y(d.weight) + 3 })
+          .attr("dy", "1em")
           .text(function(d) { return d.weight })
 
       </script>
