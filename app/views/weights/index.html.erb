@@ -18,14 +18,19 @@
       <!-- DATAVIZ SECTION -->
       <svg id="chart"></svg>
       <script>
-        const data = <%= @weights.reverse.to_json.html_safe %>
+        var data = <%= @weights.reverse.to_json.html_safe %>
         var width = 960
         var height = 500
         var barWidth = width / data.length
 
+        var x = d3.scaleBand()
+          .rangeRound([0, width])
+          .paddingInner(.01)
+          .domain(data.map(function(d) { return d.date }))
+
         var y = d3.scaleLinear()
           .range([height, 0])
-          .domain([d3.min(data, function(d) { return d.weight }) - 1, d3.max(data, function(d) { return d.weight })])
+          .domain([d3.min(data, function(d) { return type(d.weight) }) - 1, d3.max(data, function(d) { return type(d.weight) })])
 
         var chart = d3.select("#chart")
           .attr("width", width)
@@ -34,18 +39,23 @@
         var bar = chart.selectAll("g")
           .data(data)
         .enter().append("g")
-          .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)" })
+          .attr("transform", function(d) { return "translate(" + x(d.date) + ",0)" })
 
         bar.append("rect")
           .attr("y", function(d) { return y(d.weight) })
-          .attr("height", function(d) { return height - y(d.weight) })
-          .attr("width", barWidth - 1)
+          .attr("height", function(d) { return height - y(type(d.weight)) })
+          .attr("width", x.bandwidth() )
 
         bar.append("text")
-          .attr("x", barWidth / 2)
-          .attr("y", function(d) { return y(d.weight) + 3 })
-          .attr("dy", "1em")
+          .attr("x", x.bandwidth() / 2)
+          .attr("y", function(d) { return y(type(d.weight)) + 3 })
+          .attr("dy", ".75em")
           .text(function(d) { return d.weight })
+
+        function type(d) {
+          d.value = +d.value
+          return d
+        }
 
       </script>
     </div>

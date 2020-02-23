@@ -10,6 +10,10 @@
 - Rename database
 - Get a real web server running in prod https://devcenter.heroku.com/articles/ruby-default-web-server  
 
+## 2020-02-23
+
+Getting back to this after a few days off. I tried adding a time scale to my chart rather than the ordinal that was called for in the tutorial. Going back to ordinal, but ultimatly, I think I'll go for a line chart.
+
 ## 2020-02-17
 
 - Time for [step 3](https://bost.ocks.org/mike/bar/3/) of charting...
