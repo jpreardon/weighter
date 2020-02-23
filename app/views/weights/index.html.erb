@@ -19,9 +19,9 @@
       <svg id="chart"></svg>
       <script>
         var data = <%= @weights.reverse.to_json.html_safe %>
-        var width = 960
-        var height = 500
-        var barWidth = width / data.length
+        //var width = 960
+        var width = document.getElementById("chart-section").offsetWidth
+        var height = width * .25
 
         var x = d3.scaleBand()
           .rangeRound([0, width])
