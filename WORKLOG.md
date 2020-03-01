@@ -15,6 +15,7 @@
 Let's wrap up this bar chart
 
 - Add x and y axis, remove weight labels in chart
+- Add y axis label
 
 ## 2020-02-23
 

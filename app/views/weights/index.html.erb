@@ -50,16 +50,6 @@
           .append("g")
             .attr("transform", "translate(" + margin_px.left + "," + margin_px.top + ")")
 
-        var bar = chart.selectAll("g")
-          .data(data)
-        .enter().append("g")
-          .attr("transform", function(d) { return "translate(" + x(d.date) + ",0)" })
-
-        bar.append("rect")
-          .attr("y", function(d) { return y(d.weight) })
-          .attr("height", function(d) { return height - y(type(d.weight)) })
-          .attr("width", x.bandwidth() )
-
         chart.append("g")
           .attr("class", "x axis")
           .attr("transform", "translate(0," + height + ")")
@@ -68,6 +58,21 @@
         chart.append("g")
           .attr("class", "y axis")
           .call(yAxis)
+        .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", -42)
+          .attr("dy", "0.71em")
+          .style("text-anchor", "end")
+          .text("Weight")
+
+        chart.selectAll(".bar")
+          .data(data)
+        .enter().append("rect")
+          .attr("class", "bar")
+          .attr("x", function(d) { return x(d.date) })
+          .attr("y", function(d) { return y(d.weight) })
+          .attr("height", function(d) { return height - y(type(d.weight)) })
+          .attr("width", x.bandwidth() )
 
         function type(d) {
           d.value = +d.value

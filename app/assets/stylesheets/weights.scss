@@ -28,3 +28,7 @@
     stroke: $body-color;
     shape-rendering: crispEdges;
 }
+
+.axis path {
+    display: none;
+}
