@@ -19,22 +19,36 @@
       <svg id="chart"></svg>
       <script>
         var data = <%= @weights.reverse.to_json.html_safe %>
-        //var width = 960
-        var width = document.getElementById("chart-section").offsetWidth
-        var height = width * .25
+        var container_width = document.getElementById("chart-section").offsetWidth
+        var container_height = container_width * 0.25
+        var margin_pct = {top: 0.04, right: 0.03125, bottom: 0.06, left: 0.04166}
+        var margin_px = {
+              top: container_height * margin_pct.top, 
+              right: container_width * margin_pct.right, 
+              bottom: container_height * margin_pct.bottom, 
+              left: container_width * margin_pct.left 
+            }
+        var width = container_width - margin_px.left - margin_px.right
+        var height = container_height - margin_px.top - margin_px.bottom
 
         var x = d3.scaleBand()
           .rangeRound([0, width])
           .paddingInner(.01)
           .domain(data.map(function(d) { return d.date }))
 
+        var xAxis = d3.axisBottom(x)
+
         var y = d3.scaleLinear()
           .range([height, 0])
           .domain([d3.min(data, function(d) { return type(d.weight) }) - 1, d3.max(data, function(d) { return type(d.weight) })])
 
+        var yAxis = d3.axisLeft(y)
+
         var chart = d3.select("#chart")
-          .attr("width", width)
-          .attr("height", height)
+            .attr("width", container_width)
+            .attr("height", container_height)
+          .append("g")
+            .attr("transform", "translate(" + margin_px.left + "," + margin_px.top + ")")
 
         var bar = chart.selectAll("g")
           .data(data)
@@ -46,11 +60,14 @@
           .attr("height", function(d) { return height - y(type(d.weight)) })
           .attr("width", x.bandwidth() )
 
-        bar.append("text")
-          .attr("x", x.bandwidth() / 2)
-          .attr("y", function(d) { return y(type(d.weight)) + 3 })
-          .attr("dy", ".75em")
-          .text(function(d) { return d.weight })
+        chart.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis)
+
+        chart.append("g")
+          .attr("class", "y axis")
+          .call(yAxis)
 
         function type(d) {
           d.value = +d.value

@@ -12,8 +12,19 @@
     fill: $secondary;
 }
 
-#chart text {
-    fill: $yiq-text-light;
-    font: 14px $font-family-base;
-    text-anchor: middle;
+#chart .x.axis text {
+    font: 0.60rem $font-family-sans-serif;
+    fill: $body-color;
+}
+
+#chart .y.axis text {
+    font: 0.75rem $font-family-sans-serif;
+    fill: $body-color;
+}
+  
+.axis path,
+.axis line {
+    fill: none;
+    stroke: $body-color;
+    shape-rendering: crispEdges;
 }
