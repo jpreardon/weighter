@@ -21,15 +21,14 @@
         var data = <%= @weights.reverse.to_json.html_safe %>
         var container_width = document.getElementById("chart-section").offsetWidth
         var container_height = container_width * 0.25
-        var margin_pct = {top: 0.04, right: 0.03125, bottom: 0.06, left: 0.04166}
-        var margin_px = {
-              top: container_height * margin_pct.top, 
-              right: container_width * margin_pct.right, 
-              bottom: container_height * margin_pct.bottom, 
-              left: container_width * margin_pct.left 
+        var margin = {
+              top: container_height * 0.04, 
+              right: container_width * 0.03125, 
+              bottom: container_height * 0.06, 
+              left: container_width * 0.04166 
             }
-        var width = container_width - margin_px.left - margin_px.right
-        var height = container_height - margin_px.top - margin_px.bottom
+        var width = container_width - margin.left - margin.right
+        var height = container_height - margin.top - margin.bottom
 
         var x = d3.scaleBand()
           .rangeRound([0, width])
@@ -48,7 +47,7 @@
             .attr("width", container_width)
             .attr("height", container_height)
           .append("g")
-            .attr("transform", "translate(" + margin_px.left + "," + margin_px.top + ")")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
         chart.append("g")
           .attr("class", "x axis")
