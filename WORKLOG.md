@@ -16,6 +16,7 @@ Getting back to this after a few days off. I tried adding a time scale to my cha
 
 - Get bar chart working agin
 - Make the SVG size dynamic based on the (current) viewport width
+- Looks like crap on narrow widths.
 
 ## 2020-02-17
 
