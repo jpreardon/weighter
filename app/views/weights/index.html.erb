@@ -27,6 +27,11 @@
               bottom: container_height * 0.06, 
               left: container_width * 0.04166 
             }
+
+        if (container_width < 1140) {
+          margin.left = 0
+        }
+
         var width = container_width - margin.left - margin.right
         var height = container_height - margin.top - margin.bottom
 
@@ -35,34 +40,40 @@
           .paddingInner(.01)
           .domain(data.map(function(d) { return d.date }))
 
-        var xAxis = d3.axisBottom(x)
+        if (container_width >= 1140) {
+          var xAxis = d3.axisBottom(x)
+        }
 
         var y = d3.scaleLinear()
           .range([height, 0])
           .domain([d3.min(data, function(d) { return type(d.weight) }) - 1, d3.max(data, function(d) { return type(d.weight) })])
 
-        var yAxis = d3.axisLeft(y)
-
+        if (container_width >= 1140) {
+          var yAxis = d3.axisLeft(y)
+        }
+        
         var chart = d3.select("#chart")
             .attr("width", container_width)
             .attr("height", container_height)
           .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
-        chart.append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis)
+        if (container_width >= 1140) {
+          chart.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis)
 
-        chart.append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
-        .append("text")
-          .attr("transform", "rotate(-90)")
-          .attr("y", -42)
-          .attr("dy", "0.71em")
-          .style("text-anchor", "end")
-          .text("Weight")
+          chart.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+          .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -42)
+            .attr("dy", "0.71em")
+            .style("text-anchor", "end")
+            .text("Weight")
+        }
 
         chart.selectAll(".bar")
           .data(data)

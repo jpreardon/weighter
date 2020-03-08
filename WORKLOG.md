@@ -10,6 +10,12 @@
 - Rename database
 - Get a real web server running in prod https://devcenter.heroku.com/articles/ruby-default-web-server  
 
+## 2020-03-08 
+
+Bar chart works ok on desktop, although, there is a problem with y-axis (in production only) label overlapping. On mobile, there isn't enough space for the axis though.
+
+- Remove axis and labels on small screen sizes
+
 ## 2020-03-01
 
 Let's wrap up this bar chart
