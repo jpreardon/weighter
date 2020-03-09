@@ -25,7 +25,7 @@
               top: container_height * 0.04, 
               right: container_width * 0.03125, 
               bottom: container_height * 0.06, 
-              left: container_width * 0.04166 
+              left: container_width * 0.05
             }
 
         if (container_width < 1140) {
@@ -50,6 +50,7 @@
 
         if (container_width >= 1140) {
           var yAxis = d3.axisLeft(y)
+            .tickFormat(d3.format(".1f"))
         }
         
         var chart = d3.select("#chart")
@@ -69,7 +70,7 @@
             .call(yAxis)
           .append("text")
             .attr("transform", "rotate(-90)")
-            .attr("y", -42)
+            .attr("y", -52)
             .attr("dy", "0.71em")
             .style("text-anchor", "end")
             .text("Weight")

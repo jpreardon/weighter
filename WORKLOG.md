@@ -2,6 +2,7 @@
 
 ## TODO
 
+- Add in-column labels on small screen sizes
 - Get tests running
 - Remove static pages controller and pages
 - Test coverage for weights
@@ -15,6 +16,7 @@
 Bar chart works ok on desktop, although, there is a problem with y-axis (in production only) label overlapping. On mobile, there isn't enough space for the axis though.
 
 - Remove axis and labels on small screen sizes
+- Fix label/weight collision in left axis
 
 ## 2020-03-01
 
