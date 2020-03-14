@@ -18,6 +18,7 @@ I have the labels in the columns, but they aren't displaying because [you can't 
 For this last checkin, I cleaned things up a bit, and made some other things more dirty.
 
 - Update gem versions
+- Fix typo in gemfile, upgrade js packages with yarn
 
 ## 2020-03-09
 
