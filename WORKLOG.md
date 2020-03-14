@@ -17,6 +17,8 @@ I have the labels in the columns, but they aren't displaying because [you can't 
 
 For this last checkin, I cleaned things up a bit, and made some other things more dirty.
 
+- Update gem versions
+
 ## 2020-03-09
 
 - Add in-column labels on small screen sizes.
