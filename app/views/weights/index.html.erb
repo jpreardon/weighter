@@ -27,8 +27,9 @@
               bottom: container_height * 0.06, 
               left: container_width * 0.05
             }
+        var breakpoint = 1140
 
-        if (container_width < 1140) {
+        if (container_width < breakpoint) {
           margin.left = 0
         }
 
@@ -40,7 +41,7 @@
           .paddingInner(.01)
           .domain(data.map(function(d) { return d.date }))
 
-        if (container_width >= 1140) {
+        if (container_width >= breakpoint) {
           var xAxis = d3.axisBottom(x)
         }
 
@@ -48,7 +49,7 @@
           .range([height, 0])
           .domain([d3.min(data, function(d) { return type(d.weight) }) - 1, d3.max(data, function(d) { return type(d.weight) })])
 
-        if (container_width >= 1140) {
+        if (container_width >= breakpoint) {
           var yAxis = d3.axisLeft(y)
             .tickFormat(d3.format(".1f"))
         }
@@ -59,7 +60,7 @@
           .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
-        if (container_width >= 1140) {
+        if (container_width >= breakpoint) {
           chart.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
@@ -76,14 +77,34 @@
             .text("Weight")
         }
 
-        chart.selectAll(".bar")
-          .data(data)
-        .enter().append("rect")
-          .attr("class", "bar")
-          .attr("x", function(d) { return x(d.date) })
-          .attr("y", function(d) { return y(d.weight) })
-          .attr("height", function(d) { return height - y(type(d.weight)) })
-          .attr("width", x.bandwidth() )
+        
+        // TODO: This isn't very DRY
+        if (container_width >= breakpoint) {
+          chart.selectAll(".bar")
+            .data(data)
+          .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function(d) { return x(d.date) })
+            .attr("y", function(d) { return y(d.weight) })
+            .attr("height", function(d) { return height - y(type(d.weight)) })
+            .attr("width", x.bandwidth() )
+        } else {
+          chart.selectAll(".bar")
+            .data(data)
+          .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function(d) { return x(d.date) })
+            .attr("y", function(d) { return y(d.weight) })
+            .attr("height", function(d) { return height - y(type(d.weight)) })
+            .attr("width", x.bandwidth() )
+          .append("text")
+            .attr("x", 6)
+            .attr("y", 14.29)
+            .attr("dy", ".75em")
+            .text(function(d) { return d.weight })
+        }
+       
+        
 
         function type(d) {
           d.value = +d.value

@@ -8,6 +8,13 @@
     margin-bottom: $paragraph-margin-bottom;
 }
 
+#chart rect text {
+    //fill: $yiq-text-light;
+    fill: black;
+    font: 14px $font-family-base;
+    text-anchor: middle;
+}
+
 #chart rect {
     fill: $secondary;
 }
