@@ -15,6 +15,7 @@
 
 - Update rails and sass versions due to security vulnerabilities 
 - Update bootstrap gem (getting compile errors in production)
+- Going back to rails-sass 5 to see if it fixes prod errors
 
 ## 2020-03-14
 
