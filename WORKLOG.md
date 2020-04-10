@@ -11,6 +11,10 @@
 - Rename database
 - Get a real web server running in prod https://devcenter.heroku.com/articles/ruby-default-web-server  
 
+## 2020-04-10
+
+Update rails and sass versions due to security vulnerabilities 
+
 ## 2020-03-14
 
 I have the labels in the columns, but they aren't displaying because [you can't add text to a rect](https://stackoverflow.com/questions/20644415/d3-appending-text-to-a-svg-rectangle). That's really no big thing, but I need to append a <g> element, then put the rectangle and text inside. Adding to the todo list. For now, I'm putting this project aside to work on something else.
