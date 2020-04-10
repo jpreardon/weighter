@@ -13,7 +13,8 @@
 
 ## 2020-04-10
 
-Update rails and sass versions due to security vulnerabilities 
+- Update rails and sass versions due to security vulnerabilities 
+- Update bootstrap gem (getting compile errors in production)
 
 ## 2020-03-14
 
