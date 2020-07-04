@@ -11,6 +11,11 @@
 - Rename database
 - Get a real web server running in prod https://devcenter.heroku.com/articles/ruby-default-web-server  
 
+## 2020-07-04
+
+- Merged all of dependabot's pull requests
+- Change number of weights returned by default to 7 to get weekly averages
+
 ## 2020-04-10
 
 - Update rails and sass versions due to security vulnerabilities 
