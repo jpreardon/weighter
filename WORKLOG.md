@@ -15,6 +15,7 @@
 
 - Merged all of dependabot's pull requests
 - Change number of weights returned by default to 7 to get weekly averages
+- Bump rails version to 6.0.3.2
 
 ## 2020-04-10
 
