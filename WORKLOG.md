@@ -2,14 +2,23 @@
 
 ## TODO
 
-- Get in-column labels working
-- Get tests running
-- Remove static pages controller and pages
-- Test coverage for weights
-- Add a simple visualization
-- Get more advanced with visualization?
-- Rename database
-- Get a real web server running in prod https://devcenter.heroku.com/articles/ruby-default-web-server  
+- Wipe out (almost) everything from previous project
+- Get basic PHP page running
+- Connect PHP to MySQL to list 7 days worth of (formatted) weights
+- Set up test database
+- Create input form
+- Create edit form
+- Create delete form
+- Migrate from heroku
+- Create basic visualization
+
+## 2022-08-27
+
+This project hasn't been touched in over 2 years now. However, it gets used daily. Currently, it needs several patches, and Heroku is shutting down their free tier in a couple months. So, I think it's time to simplify.
+
+Web developers everywhere will cringe, because I'm going with PHP :) I just need a way to put one weight into a database daily, and visualize the past few days. A framework of any kind seems like overkill for this, and I'm not good at keeping up the dependencies. 
+
+- Wipe out (almost) everything from previous project
 
 ## 2020-07-04
 
