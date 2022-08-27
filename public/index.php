@@ -25,7 +25,19 @@
 
         .right-align {
             text-align: right;
-        }        
+        }     
+        
+        /* Colors */
+        body {
+            background-color: #fff;
+            color: #444;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #fff;
+            }
+        }
     </style>
     <body>
         <h1>Weighter</h1>

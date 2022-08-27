@@ -1,19 +1,15 @@
 # Weighter
 
-This is a to be a simple app that tracks weight, daily.
+This is a super simple app that tracks weight, daily–if you wish.
 
 ## Setup
 
-Basic HTTP authentication is used here. Define the following two variables in the host environment with your desired username and password.
+A config.php file is required in the same directory with the following parameters defined:
 
-- HTTP_USER
-- HTTP_PASSWORD
+```
+$dbdsn = 'DATA_SOURCE_NAME';
+$dbusername = 'USERNAME';
+$dbpassword = 'PASSWORD';
+```
 
-In production, MYSQL is used, primarily because the old rewards app used it, so we'll use it too! The following parameters need to be present for that.
-
-- DB_NAME
-- DB_USERNAME
-- DB_PASSWORD
-- DB_HOST 
-- DB_PORT
-
+See [PHP PDO::__construct](https://www.php.net/manual/en/pdo.construct.php) for a through explanation of the data source name.

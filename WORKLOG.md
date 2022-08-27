@@ -18,6 +18,7 @@ Web developers everywhere will cringe, because I'm going with PHP :) I just need
 - Wipe out (almost) everything from previous project
 - Get basic PHP page running
 - Connect PHP to MySQL to list 7 days worth of (formatted) weights
+- Update readme, set up dark mode, because that's important.
 
 ## 2020-07-04
 
