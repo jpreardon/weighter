@@ -19,6 +19,7 @@ Web developers everywhere will cringe, because I'm going with PHP :) I just need
 - Get basic PHP page running
 - Connect PHP to MySQL to list 7 days worth of (formatted) weights
 - Update readme, set up dark mode, because that's important.
+- Add meta tag for slightly better mobile sizing.
 
 ## 2020-07-04
 
