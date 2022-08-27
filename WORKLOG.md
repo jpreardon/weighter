@@ -2,9 +2,6 @@
 
 ## TODO
 
-- Wipe out (almost) everything from previous project
-- Get basic PHP page running
-- Connect PHP to MySQL to list 7 days worth of (formatted) weights
 - Set up test database
 - Create input form
 - Create edit form
@@ -19,6 +16,8 @@ This project hasn't been touched in over 2 years now. However, it gets used dail
 Web developers everywhere will cringe, because I'm going with PHP :) I just need a way to put one weight into a database daily, and visualize the past few days. A framework of any kind seems like overkill for this, and I'm not good at keeping up the dependencies. 
 
 - Wipe out (almost) everything from previous project
+- Get basic PHP page running
+- Connect PHP to MySQL to list 7 days worth of (formatted) weights
 
 ## 2020-07-04
 
