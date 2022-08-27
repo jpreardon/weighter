@@ -2,8 +2,6 @@
 
 ## TODO
 
-- Set up test database
-- Create input form
 - Create edit form
 - Create delete form
 - Migrate from heroku
@@ -20,6 +18,8 @@ Web developers everywhere will cringe, because I'm going with PHP :) I just need
 - Connect PHP to MySQL to list 7 days worth of (formatted) weights
 - Update readme, set up dark mode, because that's important.
 - Add meta tag for slightly better mobile sizing.
+- Set up test database.
+- Create input form. Put CSS in external file.
 
 ## 2020-07-04
 
