@@ -3,7 +3,6 @@
 ## TODO
 
 - Create delete form
-- Migrate from heroku
 - Create basic visualization
 
 ## 2022-08-28
@@ -11,6 +10,7 @@
 - Create edit form
 - Handle db errors more gracefully (by adding a line to the config)
 - Include example config and sql files, update readme.
+- Migrate from heroku. (merge php-version branch to master)
 
 ## 2022-08-27
 
