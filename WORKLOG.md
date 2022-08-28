@@ -3,13 +3,14 @@
 ## TODO
 
 - Create delete form
-- Handle db errors more gracefully
 - Migrate from heroku
 - Create basic visualization
 
 ## 2022-08-28
 
 - Create edit form
+- Handle db errors more gracefully (by adding a line to the config)
+- Include example config and sql files, update readme.
 
 ## 2022-08-27
 
