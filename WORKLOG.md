@@ -2,10 +2,14 @@
 
 ## TODO
 
-- Create edit form
 - Create delete form
+- Handle db errors more gracefully
 - Migrate from heroku
 - Create basic visualization
+
+## 2022-08-28
+
+- Create edit form
 
 ## 2022-08-27
 
