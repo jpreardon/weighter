@@ -11,6 +11,19 @@ td, th {
     text-align: right;
 }     
 
+/* Forms */
+input {
+    display: block;
+    margin-top: .25rem;
+    margin-bottom: 1rem;
+    width: 10rem;
+    border: 1px solid #444;
+}
+
+form { 
+    margin-top: 1rem;
+}
+
 /* Colors */
 body {
     background-color: #fff;
@@ -21,16 +34,12 @@ body {
         background-color: #222;
         color: #fff;
     }
-}
-
-/* Forms */
-input {
-    display: block;
-    margin-top: .25rem;
-    margin-bottom: 1rem;
-    width: 10rem;
-}
-
-form { 
-    margin-top: 1rem;
+    a {
+        color: rgb(107, 174, 241);
+    }
+    input {
+        background-color: #222;
+        color: #fff;
+        border: 1px solid #fff;
+    }
 }

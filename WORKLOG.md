@@ -20,6 +20,7 @@ Web developers everywhere will cringe, because I'm going with PHP :) I just need
 - Add meta tag for slightly better mobile sizing.
 - Set up test database.
 - Create input form. Put CSS in external file.
+- Make dark mode styles more readable.
 
 ## 2020-07-04
 
