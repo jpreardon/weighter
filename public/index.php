@@ -20,7 +20,7 @@
                 $dbh = new PDO($dbdsn, $dbusername, $dbpassword);
             
                 /* Grab some data */
-                $dbquery = 'SELECT id, date, weight FROM weights ORDER BY date DESC LIMIT 7';
+                $dbquery = 'SELECT id, date, weight FROM weights ORDER BY date DESC LIMIT 8';
 
                 foreach ($dbh->query($dbquery) as $row) {
                     $id = $row['id'];
