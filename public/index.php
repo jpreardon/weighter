@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Weighter 3</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-    </head>
-    <link href="styles.css" rel="stylesheet">
-    <body>
-        <h1>Weighter</h1>
+<?php
+    require_once 'functions.php';
+
+    page_top();
+?>
         <a href="add-weight.php">Add Weight</a>
         <p>Previously</p>
         <table>
@@ -15,7 +11,6 @@
                 <th class="right-align">Weight</th>
             </tr>
             <?php
-                require_once 'config.php';
                 /* Connect to a MySQL database using driver invocation */
                 $dbh = new PDO($dbdsn, $dbusername, $dbpassword);
             
@@ -38,5 +33,7 @@
                 $dbh = null;
             ?>
         </table>
-    </body>
-</html>
+
+<?php
+    page_bottom();
+?>
