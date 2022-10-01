@@ -5,4 +5,7 @@
     $dbdsn = '[DATASOURCE_NAME]';
     $dbusername = '[USERNAME]';
     $dbpassword = '[PASSWORD]';
+    /* Local username & password */
+    $username = '[USERNAME]';
+    $password = '[PASSWORD]';
 ?>
