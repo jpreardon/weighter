@@ -5,6 +5,12 @@
 - Create delete form
 - Create basic visualization
 
+## 2022-10-01
+
+Refactor the HTML a bit so there's not so much duplication in the files.
+
+- Move common HTML to functions.php
+
 ## 2022-08-28
 
 - Create edit form
