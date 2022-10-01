@@ -1,6 +1,6 @@
 <?php
     require_once 'functions.php';
-
+    authorize($username, $password);
     page_top();
 ?>
         <a href="add-weight.php">Add Weight</a>

@@ -20,4 +20,11 @@
         print '</html>';
     }
 
+    // Auth
+    function authorize($username, $password) {
+        if (!password_verify($username . $password, $_COOKIE['loginhash'])) {
+            // If not authorized, redirect to login
+            header('Location: login.php');
+        }
+    }
 ?>

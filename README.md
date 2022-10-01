@@ -9,3 +9,5 @@ Its been through many iterations over the years, mostly to experiment with diffe
 A simple database table is required. A [script for MySQL](create-weights.sql) is included in this repo, but other relational database systems will work too.
 
 A config.php file is required. An example is included. Rename config-example.php to config.php and set the database parameters as needed. See [PHP PDO::__construct](https://www.php.net/manual/en/pdo.construct.php) for a through explanation of the data source name.
+
+There's a simple username/password scheme here. Set them both in the config file. Logins are saved as cookies for 90 days.

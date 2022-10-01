@@ -1,5 +1,6 @@
 <?php
     require_once 'functions.php';
+    authorize($username, $password);
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $opt = array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION );
 
