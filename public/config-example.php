@@ -8,4 +8,6 @@
     /* Local username & password */
     $username = '[USERNAME]';
     $password = '[PASSWORD]';
+    /* Domain */
+    $domain = '[DOMAIN]';
 ?>

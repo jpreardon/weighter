@@ -15,6 +15,7 @@ Refactor the HTML a bit so there's not so much duplication in the files.
 - Move common HTML to functions.php
 - Simple login page
 - Add authorize function
+- Add domain variable for cookies
 
 ## 2022-08-28
 

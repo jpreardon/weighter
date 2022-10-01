@@ -5,7 +5,7 @@
         if ($_POST['username'] == $username && $_POST['password'] == $password) {
             // If there's a match, set the cookie
             $hashed = password_hash($username . $password, PASSWORD_DEFAULT);
-            setcookie('loginhash', $hashed, time()+60*60*24*90, '/', 'localhost');
+            setcookie('loginhash', $hashed, time()+60*60*24*90, '/', $domain);
              // Redirect to home
              header('Location: index.php');
         } else {
@@ -13,7 +13,7 @@
             $error_message = "Wrong username or password";
         }
     } 
-    
+
     page_top();
 ?>
     <h2>Login</h2>
