@@ -2,6 +2,8 @@
 
 ## TODO
 
+- Refactor PHP, move more to functions file, template the HTML a bit more
+- Add running average?
 - Create delete form
 - Create basic visualization
 
@@ -10,6 +12,7 @@
 Did a little database cleanup. The column names in production didn't match the create-weights.sql in this repo. The create dates were not getting captured since moving off of Rails either.
 
 - Database cleanup
+- Add average to index page
 
 ## 2022-10-01
 
