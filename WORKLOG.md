@@ -5,6 +5,12 @@
 - Create delete form
 - Create basic visualization
 
+## 2022-10-02
+
+Did a little database cleanup. The column names in production didn't match the create-weights.sql in this repo. The create dates were not getting captured since moving off of Rails either.
+
+- Database cleanup
+
 ## 2022-10-01
 
 I'm tired of logging in with HTTP auth every day, so I'll add some sort of basic auth scheme. On the target server, I don't seem to have access to the HTTP auth information, so I'll have to roll my own. Given the low security needs of this particular application, I'll just store the username and password in the config.php file. I'll also set a cookie so I don't have to log in every time.
