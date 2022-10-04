@@ -7,6 +7,12 @@
 - Create delete form
 - Create basic visualization
 
+## 2022-10-03
+
+Why do something on the todo list when one can mess about with some simple styles? Really just targeting mobile (narrow) screens with some changes so make it easier to read.
+
+- Add some basic styles to the mobile sized page.
+
 ## 2022-10-02
 
 Did a little database cleanup. The column names in production didn't match the create-weights.sql in this repo. The create dates were not getting captured since moving off of Rails either.

@@ -4,7 +4,6 @@
     page_top();
 ?>
         <a href="add-weight.php">Add Weight</a>
-        <p>Previously</p>
         <table>
             <tr>
                 <th>Date</th>

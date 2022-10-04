@@ -43,3 +43,28 @@ body {
         border: 1px solid #fff;
     }
 }
+
+@media (max-width: 375px) {
+    table {
+        width: 100%;
+        font-size: 1.35rem;
+        font-weight: bold;
+    }
+    body {
+        font-size: 1.35rem;
+        font-weight: bold;
+    }
+    input {
+        padding: 0.5rem;
+        width: 100%;
+        margin-bottom: 1.75rem;
+        font-size: 1.35rem;
+        font-weight: bold;
+        border-radius: 2px;
+        box-sizing: border-box; 
+        -webkit-appearance: textfield;
+    }
+    input::-webkit-date-and-time-value {
+        text-align: left;
+    }
+}
