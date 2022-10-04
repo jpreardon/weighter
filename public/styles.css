@@ -7,6 +7,10 @@ td, th {
     text-align: left;
 }
 
+table {
+    margin-top: 1rem;
+}
+
 .right-align {
     text-align: right;
 }     

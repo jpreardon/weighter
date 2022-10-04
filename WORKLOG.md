@@ -12,6 +12,7 @@
 Why do something on the todo list when one can mess about with some simple styles? Really just targeting mobile (narrow) screens with some changes so make it easier to read.
 
 - Add some basic styles to the mobile sized page.
+- Add some margin to the top of the table.
 
 ## 2022-10-02
 
