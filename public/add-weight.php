@@ -1,11 +1,11 @@
 <?php
     require_once 'functions.php';
-    authorize($username, $password);
+    authorize();
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $opt = array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION );
 
         try {
-            $dbh = new PDO($dbdsn, $dbusername, $dbpassword, $opt);
+            $dbh = new PDO(DBDSN, DBUSERNAME, DBPASSWORD, $opt);
             $STH = $dbh->prepare("INSERT INTO weights (date,weight) VALUES (:date,:weight)");
             $STH->bindParam(':date', $_POST['date']);
             $STH->bindParam(':weight', $_POST['weight']);

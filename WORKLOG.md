@@ -10,6 +10,7 @@
 ## 2022-10-05
 
 - Use HEREDOC to clean up HTML strings, change all prints to echos
+- Changed config variables to constants
 
 ## 2022-10-03
 

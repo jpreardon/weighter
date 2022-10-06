@@ -1,11 +1,11 @@
 <?php
     require_once 'functions.php';
-    authorize($username, $password);
+    authorize();
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $opt = array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION );
 
         try {
-            $dbh = new PDO($dbdsn, $dbusername, $dbpassword, $opt);
+            $dbh = new PDO(DBDSN, DBUSERNAME, DBPASSWORD, $opt);
             $STH = $dbh->prepare("UPDATE weights SET date = :date, weight = :weight WHERE id = :id");
             $STH->bindParam(':id', $_POST['id']);
             $STH->bindParam(':date', $_POST['date']);
@@ -20,7 +20,7 @@
 
     $id = $_GET['id'];
     $dbquery = 'SELECT id, date, weight FROM weights WHERE id = "' . $id .'"';
-    $dbh = new PDO($dbdsn, $dbusername, $dbpassword);
+    $dbh = new PDO(DBDSN, DBUSERNAME, DBPASSWORD);
     $sth = $dbh->prepare($dbquery);
     $sth->execute();
     $result = $sth->fetch(PDO::FETCH_ASSOC);
@@ -32,11 +32,11 @@
         <a href="index.php">Home</a>
         <h2>Edit Weight</h2>
         <form method="POST">
-            <input type="hidden" id="id" name="id" value="<?php print $result['id']; ?>">
+            <input type="hidden" id="id" name="id" value="<?php echo $result['id']; ?>">
             <label for="date">Date</label>
-            <input type="date" name="date" id="date" value="<?php print $result['date']; ?>">
+            <input type="date" name="date" id="date" value="<?php echo $result['date']; ?>">
             <label for="weight">Weight</label>
-            <input type="text" inputmode="decimal" name="weight" id="weight" value="<?php print $result['weight']; ?>">
+            <input type="text" inputmode="decimal" name="weight" id="weight" value="<?php echo $result['weight']; ?>">
             <input type="submit" name="edit weight" value="edit weight">
         </form>
 <?php

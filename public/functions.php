@@ -1,6 +1,6 @@
 <?php
     require_once 'config.php';
-
+    
     // Top of HTML Page
     function page_top() {
         $html = <<<EOF
@@ -29,8 +29,8 @@
     }
 
     // Auth
-    function authorize($username, $password) {
-        if (!password_verify($username . $password, $_COOKIE['loginhash'])) {
+    function authorize() {
+        if (!password_verify(USERNAME . PASSWORD, $_COOKIE['loginhash'])) {
             // If not authorized, redirect to login
             header('Location: login.php');
         }

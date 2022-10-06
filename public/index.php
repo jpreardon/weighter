@@ -1,6 +1,6 @@
 <?php
     require_once 'functions.php';
-    authorize($username, $password);
+    authorize();
     page_top();
 ?>
         <a href="add-weight.php">Add Weight</a>
@@ -11,7 +11,7 @@
             </tr>
             <?php
                 /* Connect to a MySQL database using driver invocation */
-                $dbh = new PDO($dbdsn, $dbusername, $dbpassword);
+                $dbh = new PDO(DBDSN, DBUSERNAME, DBPASSWORD);
             
                 /* Grab some data */
                 $dbquery = 'SELECT id, date, weight FROM weights ORDER BY date DESC LIMIT 8';
@@ -45,7 +45,7 @@
             ?>
         </table>
 
-        <p>Average: <strong><?php print round($total_weight/$num_rows, 2); ?></strong></p>
+        <p>Average: <strong><?php echo round($total_weight/$num_rows, 2); ?></strong></p>
 
 <?php
     page_bottom();
