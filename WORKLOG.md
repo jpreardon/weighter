@@ -11,6 +11,7 @@
 
 - Use HEREDOC to clean up HTML strings, change all prints to echos
 - Changed config variables to constants
+- Fix bug with IDs in index.php URLs
 
 ## 2022-10-03
 

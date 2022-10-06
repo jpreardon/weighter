@@ -34,7 +34,7 @@
                     $html = <<<EOF
                         <tr>
                             <td>$weekday  ($day$month)</td>
-                            <td class="right-align"><a href="edit-weight.php?id="$id">$weight</a></td>
+                            <td class="right-align"><a href="edit-weight.php?id=$id">$weight</a></td>
                         </tr>
                     EOF;
 
