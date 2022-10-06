@@ -7,6 +7,10 @@
 - Create delete form
 - Create basic visualization
 
+## 2022-10-05
+
+- Use HEREDOC to clean up HTML strings, change all prints to echos
+
 ## 2022-10-03
 
 Why do something on the todo list when one can mess about with some simple styles? Really just targeting mobile (narrow) screens with some changes so make it easier to read.

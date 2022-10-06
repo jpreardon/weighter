@@ -25,7 +25,7 @@
         <h2>Add Weight</h2>
         <form method="POST">
             <label for="date">Date</label>
-            <input type="date" name="date" id="date" value="<?php print date('Y-m-d'); ?>">
+            <input type="date" name="date" id="date" value="<?php echo date('Y-m-d'); ?>">
             <label for="weight">Weight</label>
             <input type="text" inputmode="decimal" name="weight" id="weight">
             <input type="submit" name="add weight" value="add weight">

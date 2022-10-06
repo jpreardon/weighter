@@ -22,7 +22,7 @@
                 foreach ($dbh->query($dbquery) as $row) {
                     $id = $row['id'];
                     $weekday = date_format(date_create($row['date']), 'l');
-                    $month = date_format(date_create($row['date']), 'M');
+                    $month = strtoupper(date_format(date_create($row['date']), 'M'));
                     $day = date_format(date_create($row['date']), 'd');
                     $weight = trim($row['weight']);
 
@@ -31,10 +31,14 @@
                     $num_rows++;
                     $total_weight += $weight;
 
-                    print "<tr>";
-                    print '<td>' . $weekday . ' (' . $day . strtoupper($month) . ')' . '</td>';
-                    print '<td class="right-align">' . '<a href="edit-weight.php?id=' . $id . '">' . $weight . '</a></td>';
-                    print "</tr>";
+                    $html = <<<EOF
+                        <tr>
+                            <td>$weekday  ($day$month)</td>
+                            <td class="right-align"><a href="edit-weight.php?id="$id">$weight</a></td>
+                        </tr>
+                    EOF;
+
+                    echo $html;
                 }
 
                 $dbh = null;

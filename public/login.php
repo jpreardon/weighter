@@ -19,7 +19,7 @@
     <h2>Login</h2>
     <?php
         if ($error_message) {
-            print '<p>' . $error_message . '</p>';
+            echo '<p>' . $error_message . '</p>';
         }
     ?>
     <form method="POST">
