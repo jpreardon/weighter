@@ -1,11 +1,8 @@
 # Worklog
 
-## TODO
+## 2023-09-23
 
-- Refactor PHP, move more to functions file, template the HTML a bit more
-- Add running average?
-- Create delete form
-- Create basic visualization
+- Move TODOs to [issues](https://github.com/jpreardon/weighter/issues/)
 
 ## 2022-10-05
 
