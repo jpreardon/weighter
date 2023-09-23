@@ -3,6 +3,7 @@
 ## 2023-09-23
 
 - Move TODOs to [issues](https://github.com/jpreardon/weighter/issues/)
+- Add basic graph page. Fixes #45
 
 ## 2022-10-05
 

@@ -3,7 +3,7 @@
     authorize();
     page_top();
 ?>
-        <a href="add-weight.php">Add Weight</a>
+        <a href="add-weight.php">Add Weight</a> |  <a href="graph.php">Graph</a>
         <table>
             <tr>
                 <th>Date</th>
