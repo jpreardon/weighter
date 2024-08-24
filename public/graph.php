@@ -12,10 +12,10 @@
         $toDate = date_create($_GET['toDate']);
         $fromDate = date_create($_GET['fromDate']);
     } else {
-        // If they don't default to the last 90 days
+        // If they don't default to the last year
         $toDate = date_create();
         $fromDate = date_create();
-        date_sub($fromDate, date_interval_create_from_date_string("90 days"));
+        date_sub($fromDate, date_interval_create_from_date_string("1 year"));
     }
 
     /* Grab the data */

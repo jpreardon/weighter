@@ -1,5 +1,9 @@
 # Worklog
 
+## 2024-08-24
+
+Change default graph period to 1 year.
+
 ## 2023-09-23
 
 - Move TODOs to [issues](https://github.com/jpreardon/weighter/issues/)
