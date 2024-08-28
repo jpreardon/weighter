@@ -42,6 +42,10 @@
     // TODO: Clean up this hack
     weights.forEach(element => element.date = new Date(element.date));
 
+    const lineColor = "#4775de";
+    const dotFillColor = "silver";
+    const dotStrokeColor = "#4775de";
+
     const plot = Plot.plot({
         x: { label: "Date" },
         y: { grid: true, label: "Weight" },
@@ -52,7 +56,14 @@
             Plot.lineY(weights, {
                 x: "date",
                 y: "weight",
-                stroke: "#4775de",
+                stroke: lineColor,
+                tip: true
+            }),
+            Plot.dot(weights, {
+                x: "date",
+                y: "weight",
+                fill: dotFillColor,
+                stroke: dotStrokeColor,
                 tip: true
             })
         ]
