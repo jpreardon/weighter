@@ -19,6 +19,7 @@ Also...
 - Add tooltip back to line on graph.
 - Host plot.js and d3.js rather than use CDN. Make tip background dark when dark theme is requested. Fixes #50
 - Changed -webkit-appearance to appearance for the inputs (should be supported, mostly, now).
+- Change figure (plot area) margin to zero and remove 100% width from narrow screen inputs. Fixes #48. Fixes #49.
 
 ## 2024-08-29
 
