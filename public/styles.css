@@ -33,6 +33,7 @@ body {
     background-color: #fff;
     color: #444;
 }
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #222;
@@ -69,7 +70,7 @@ body {
         font-weight: bold;
         border-radius: 2px;
         box-sizing: border-box; 
-        -webkit-appearance: textfield;
+        appearance: textfield;
     }
     input::-webkit-date-and-time-value {
         text-align: left;
