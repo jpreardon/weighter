@@ -33,8 +33,8 @@
 
 <div id="myplot"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+<script src="d3.js"></script>
+<script src="plot.js"></script>
 <script>
 
     // JSON_NUMERIC_CHECK is important here, otherwise the weights are strings

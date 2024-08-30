@@ -17,8 +17,7 @@ So, no real change here, other than me no longer calling this a hack :)
 Also...
 
 - Add tooltip back to line on graph.
-
-Working on #50
+- Host plot.js and d3.js rather than use CDN. Make tip background dark when dark theme is requested. Fixes #50
 
 ## 2024-08-29
 
