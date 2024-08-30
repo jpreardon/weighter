@@ -57,7 +57,8 @@
             Plot.lineY(weights, {
                 x: "date",
                 y: "weight",
-                stroke: lineColor
+                stroke: lineColor,
+                tip: true
             })
         ]
     })

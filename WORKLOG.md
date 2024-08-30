@@ -14,6 +14,12 @@ If this is possible when calling the json_encode function, I don't know how.
 
 So, no real change here, other than me no longer calling this a hack :)
 
+Also...
+
+- Add tooltip back to line on graph.
+
+Working on #50
+
 ## 2024-08-29
 
 Remove dots from line graph. They cluttered things up too much on small screens.
