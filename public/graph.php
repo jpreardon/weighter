@@ -57,13 +57,6 @@
                 x: "date",
                 y: "weight",
                 stroke: lineColor
-            }),
-            Plot.dot(weights, {
-                x: "date",
-                y: "weight",
-                fill: dotFillColor,
-                stroke: dotStrokeColor,
-                tip: true
             })
         ]
     })

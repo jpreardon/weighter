@@ -1,5 +1,9 @@
 # Worklog
 
+## 2024-08-29
+
+Remove dots from line graph. They cluttered things up too much on small screens.
+
 ## 2024-08-28
 
 Add dots to line on graph.
