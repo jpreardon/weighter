@@ -37,9 +37,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
 <script>
 
+    // JSON_NUMERIC_CHECK is important here, otherwise the weights are strings
     var weights = <?php echo json_encode($result, JSON_NUMERIC_CHECK); ?>;
 
-    // TODO: Clean up this hack
+    // Coerce date strings to specific type per https://observablehq.com/plot/features/scales
     weights.forEach(element => element.date = new Date(element.date));
 
     const lineColor = "#4775de";

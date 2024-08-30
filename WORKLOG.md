@@ -1,5 +1,19 @@
 # Worklog
 
+## 2024-08-30
+
+Spent time "trying to do the right thing" to get rid of what I thought was a hack on the graph page:
+
+```
+weights.forEach(element => element.date = new Date(element.date));
+```
+
+The plot's scale can convert this date string to a date by specifying the type as "utc". However, the docs recommend coercing the data to the more specific type on load (https://observablehq.com/plot/features/scales).
+
+If this is possible when calling the json_encode function, I don't know how. 
+
+So, no real change here, other than me no longer calling this a hack :)
+
 ## 2024-08-29
 
 Remove dots from line graph. They cluttered things up too much on small screens.
